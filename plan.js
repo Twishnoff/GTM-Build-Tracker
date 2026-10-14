@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 14, 11:42 AM",
+ "updated": "Oct 14, 3:36 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -97,6 +97,11 @@ window.PLAN = {
    "day": 4,
    "goal": "A written list of the events that define activation, before any code.",
    "tasks": [
+    {
+     "done": false,
+     "id": "d04-0",
+     "text": "Create the Apollo free account with tyler@getmktforge.com, verify, confirm search works (15 min)"
+    },
     {
      "done": false,
      "id": "d04-1",
@@ -348,7 +353,7 @@ window.PLAN = {
     {
      "done": false,
      "id": "d11-4",
-     "text": "Workflow 4: score ≥ 80 → task + Slack webhook"
+     "text": "Workflow 4: score ≥ 80 → Zapier Zap: Slack post + HubSpot task + hot-accounts sheet row"
     },
     {
      "done": false,
@@ -493,21 +498,26 @@ window.PLAN = {
     {
      "done": false,
      "id": "d16-2",
-     "text": "Source in Clay: recent funding + no marketing title; dedupe"
+     "text": "Source in Apollo (free): ICP filters, pick 200 accounts, copy out by domain"
     },
     {
      "done": false,
      "id": "d16-3",
-     "text": "Find and verify email for founder or first GTM hire"
+     "text": "Clay: load domains, no-marketing-title check, dedupe against HubSpot"
     },
     {
      "done": false,
      "id": "d16-4",
-     "text": "Push the list to HubSpot with a play property"
+     "text": "Find and verify email for founder or first GTM hire"
     },
     {
      "done": false,
      "id": "d16-5",
+     "text": "Push the list to HubSpot with a play property"
+    },
+    {
+     "done": false,
+     "id": "d16-6",
      "text": "Update the dashboard (plan.js → push)"
     }
    ],
