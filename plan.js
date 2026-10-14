@@ -1000,5 +1000,145 @@ window.PLAN = {
    "title": "Apply and pipeline the search",
    "id": "d30"
   }
+ ],
+ "tools": [
+  {
+   "id": "git",
+   "name": "Git & GitHub",
+   "group": "Build & deploy",
+   "usedDay": 1
+  },
+  {
+   "id": "gh",
+   "name": "GitHub CLI",
+   "group": "Build & deploy",
+   "usedDay": 1
+  },
+  {
+   "id": "vscode",
+   "name": "VS Code",
+   "group": "Build & deploy",
+   "usedDay": 1
+  },
+  {
+   "id": "workers",
+   "name": "Cloudflare Workers / wrangler",
+   "group": "Build & deploy",
+   "usedDay": 1
+  },
+  {
+   "id": "cfqueue",
+   "name": "Cloudflare Queues & KV",
+   "group": "Build & deploy",
+   "usedDay": 3
+  },
+  {
+   "id": "actions",
+   "name": "GitHub Actions (CI)",
+   "group": "Build & deploy",
+   "usedDay": 3
+  },
+  {
+   "id": "claude",
+   "name": "Claude API",
+   "group": "Build & deploy",
+   "usedDay": 1
+  },
+  {
+   "id": "posthog",
+   "name": "PostHog",
+   "group": "Product analytics",
+   "usedDay": null
+  },
+  {
+   "id": "hs-props",
+   "name": "HubSpot properties & workflows",
+   "group": "CRM & automation",
+   "usedDay": null
+  },
+  {
+   "id": "hs-api",
+   "name": "HubSpot API & webhooks",
+   "group": "CRM & automation",
+   "usedDay": null
+  },
+  {
+   "id": "hs-seq",
+   "name": "HubSpot Sequences",
+   "group": "CRM & automation",
+   "usedDay": null
+  },
+  {
+   "id": "zapier",
+   "name": "Zapier",
+   "group": "CRM & automation",
+   "usedDay": null
+  },
+  {
+   "id": "slack",
+   "name": "Slack webhooks",
+   "group": "CRM & automation",
+   "usedDay": null
+  },
+  {
+   "id": "m365",
+   "name": "Microsoft 365 mailboxes",
+   "group": "Outbound & deliverability",
+   "usedDay": 2
+  },
+  {
+   "id": "dns",
+   "name": "DNS: SPF / DKIM / DMARC (Porkbun)",
+   "group": "Outbound & deliverability",
+   "usedDay": 2
+  },
+  {
+   "id": "mailreach",
+   "name": "Mailreach warm-up",
+   "group": "Outbound & deliverability",
+   "usedDay": 2
+  },
+  {
+   "id": "mxtoolbox",
+   "name": "MXToolbox",
+   "group": "Outbound & deliverability",
+   "usedDay": null
+  },
+  {
+   "id": "apollo",
+   "name": "Apollo",
+   "group": "Outbound & deliverability",
+   "usedDay": null
+  },
+  {
+   "id": "clay",
+   "name": "Clay",
+   "group": "Outbound & deliverability",
+   "usedDay": null
+  },
+  {
+   "id": "bigquery",
+   "name": "BigQuery",
+   "group": "Data layer",
+   "usedDay": null
+  },
+  {
+   "id": "sql",
+   "name": "SQL",
+   "group": "Data layer",
+   "usedDay": null
+  },
+  {
+   "id": "dbt",
+   "name": "dbt Core",
+   "group": "Data layer",
+   "usedDay": null
+  },
+  {
+   "id": "looker",
+   "name": "Looker Studio",
+   "group": "Data layer",
+   "usedDay": null
+  }
  ]
 };

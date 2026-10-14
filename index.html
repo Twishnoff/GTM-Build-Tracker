@@ -117,6 +117,18 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
 .status { font-size: 12px; color: var(--muted); font-family: var(--mono); }
 .status.err { color: var(--accent); }
 
+/* stack checklist */
+.stack-panel .note { margin-top: 14px; }
+.stack { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 16px 24px; }
+.stack-group h3 { font-family: var(--mono); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+.stack ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.stack li { display: flex; gap: 9px; align-items: baseline; font-size: 13.5px; color: var(--muted); line-height: 1.35; }
+.stack li .ck { width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid var(--line); flex: none; display: grid; place-items: center; position: relative; top: 2px; }
+.stack li.used { color: var(--fg); }
+.stack li.used .ck { background: var(--done); border-color: var(--done); }
+.stack li.used .ck::after { content: ""; width: 4px; height: 7px; border: solid #fff; border-width: 0 2px 2px 0; transform: translateY(-1px) rotate(45deg); }
+.stack li .when { font-family: var(--mono); font-size: 10.5px; color: var(--done); margin-left: auto; padding-left: 8px; white-space: nowrap; }
+
 @media (max-width: 820px) {
   .bench, .agenda { grid-template-columns: minmax(0, 1fr); }
   .day { min-height: 54px; padding: 6px; }
@@ -138,6 +150,12 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
     <div class="bar" aria-hidden="true"><i id="barfill"></i><em id="barmark" title="Where today falls in the 30 days"></em></div>
     <div class="bar-foot"><span id="bar-left">Loading the plan…</span><span id="bar-right"></span></div>
     <div class="progress-meta" id="meta"></div>
+  </section>
+
+  <section class="panel stack-panel" aria-label="Tools in this build">
+    <div class="panel-head"><h2>Stack</h2><span class="count" id="stack-count"></span></div>
+    <div class="stack" id="stack"></div>
+    <div class="note">Every tool the plan touches. A check means it has been used for real in this build, with the day it first came in.</div>
   </section>
 
   <section class="bench">
@@ -190,6 +208,7 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
   const TOMORROW = addDays(TODAY, 1);
 
   // --- state ---
+  let tools = [];          // [{id, name, group, usedDay|null}]
   let days = [];            // [{id, day, date, title, goal, tasks:[{id,text,done,moved?}]}]
   let selected = TODAY;
   let db = null, canWrite = false;
@@ -211,6 +230,27 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
     $("bar-right").textContent = all.length ? `Day ${dayIdx + 1} of 30 · ${Math.round((dayIdx + 1) / 30 * 100)}% of the calendar used` : "";
     const open = all.filter(t => !t.done && effDate(t, days.find(d => d.tasks.includes(t))) < TODAY).length;
     $("meta").innerHTML = all.length ? `<span><b>${fullDays}</b> of 30 days fully done</span><span><b>${open}</b> carried from earlier days</span><span>Week ${Math.min(5, Math.floor(dayIdx / 7) + 1)} of 5</span>` : "";
+  }
+
+  // --- render: stack checklist ---
+  const GROUPS = ["Build & deploy", "Product analytics", "CRM & automation", "Outbound & deliverability", "Data layer"];
+  function renderStack() {
+    const el = $("stack"); el.innerHTML = "";
+    const used = tools.filter(t => t.usedDay).length;
+    $("stack-count").innerHTML = tools.length ? `<b>${used}</b>/${tools.length} used` : "";
+    const groups = [...new Set([...GROUPS, ...tools.map(t => t.group)])].filter(g => tools.some(t => t.group === g));
+    for (const g of groups) {
+      const div = document.createElement("div"); div.className = "stack-group";
+      div.innerHTML = `<h3>${esc(g)}</h3>`;
+      const ul = document.createElement("ul");
+      for (const t of tools.filter(t => t.group === g)) {
+        const li = document.createElement("li"); li.className = t.usedDay ? "used" : "";
+        li.innerHTML = `<span class="ck" aria-hidden="true"></span><span class="nm">${esc(t.name)}</span>${t.usedDay ? `<span class="when">d${t.usedDay}</span>` : ""}`;
+        li.title = t.usedDay ? `${t.name} — first used on day ${t.usedDay}` : `${t.name} — not used yet`;
+        ul.appendChild(li);
+      }
+      div.appendChild(ul); el.appendChild(div);
+    }
   }
 
   // --- render: calendar ---
@@ -283,7 +323,7 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
     fill($("tmrw-tasks"), tmrw, "tmrw", days.length ? "Nothing planned yet." : "Loading…");
   }
 
-  function renderAll() { renderProgress(); renderCal(); renderDetail(); renderAgenda(); }
+  function renderAll() { renderProgress(); renderStack(); renderCal(); renderDetail(); renderAgenda(); }
 
   // --- writes ---
   const writing = new Set();
@@ -313,6 +353,7 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
   // --- boot (static copy: data ships in plan.js, updated at the end of each day) ---
   const plan = window.PLAN || { days: [], updated: "" };
   days = (plan.days || []).slice().sort((a, b) => a.day - b.day);
+  tools = plan.tools || [];
   renderAll();
   $("status").textContent = plan.updated ? "updated " + plan.updated : "";
 })();
