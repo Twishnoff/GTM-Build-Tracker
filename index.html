@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GTM Build Tracker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a progress band, then a two-column workbench — a 5-week grid left, the clicked day right —
+   and a two-up agenda row underneath. Slate neutrals, one ember accent (the forge), green reserved for done. */
+:root {
+  --bg: #f3f4f7;
+  --surface: #ffffff;
+  --surface-2: #e9ebf0;
+  --line: #d3d7df;
+  --fg: #1b2230;
+  --muted: #5d6675;
+  --accent: #d2501e;
+  --accent-soft: #fbe6dc;
+  --done: #2e8b57;
+  --done-soft: #ddf2e5;
+  --today-ring: #1b2230;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, "SF Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14181f; --surface: #1c2129; --surface-2: #242a34; --line: #343b47;
+    --fg: #e8ebf0; --muted: #9aa3b2; --accent: #f0703a; --accent-soft: #3a2419;
+    --done: #4cbf7a; --done-soft: #1d3b2a; --today-ring: #e8ebf0; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14181f; --surface: #1c2129; --surface-2: #242a34; --line: #343b47;
+  --fg: #e8ebf0; --muted: #9aa3b2; --accent: #f0703a; --accent-soft: #3a2419;
+  --done: #4cbf7a; --done-soft: #1d3b2a; --today-ring: #e8ebf0; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.45; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 22px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.eyebrow { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.02em; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* progress band */
+.progress { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: grid; gap: 12px; }
+.progress-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.progress-pct { font-family: var(--mono); font-size: 34px; font-weight: 500; line-height: 1; letter-spacing: -0.02em; }
+.progress-meta { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+.progress-meta b { color: var(--fg); font-weight: 500; }
+.bar { height: 12px; background: var(--surface-2); border-radius: 999px; overflow: hidden; position: relative; }
+.bar > i { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--done); border-radius: 999px; transition: width .4s ease; }
+.bar > em { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--fg); opacity: .55; }
+.bar-foot { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+
+/* workbench */
+.bench { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; min-width: 0; }
+.panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.cal-dow { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin-bottom: 6px; }
+.cal-dow span { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: center; text-transform: uppercase; }
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.day { appearance: none; font: inherit; color: inherit; text-align: left; cursor: pointer;
+  background: var(--surface-2); border: 1px solid transparent; border-radius: 8px; padding: 8px 8px 7px; min-height: 64px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 4px; min-width: 0; }
+.day:hover { border-color: var(--line); }
+.day:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.day .d { font-family: var(--mono); font-size: 13px; font-weight: 500; display: flex; justify-content: space-between; gap: 4px; }
+.day .d small { font-size: 10px; color: var(--muted); font-weight: 400; }
+.day .t { font-size: 11px; color: var(--muted); line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.day .p { height: 3px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.day .p i { display: block; height: 100%; background: var(--accent); }
+.day.done { background: var(--done-soft); border-color: var(--done); }
+.day.done .p i { background: var(--done); }
+.day.done .t { color: var(--fg); }
+.day.sel { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.day.today .d > span::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: 5px; vertical-align: 1px; }
+.legend .l-today::before { background: var(--accent); border-color: var(--accent); border-radius: 50%; width: 8px; height: 8px; }
+.day.past:not(.done) .p i { background: var(--accent); }
+.month-mark { font-family: var(--mono); font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 1px solid var(--line); background: var(--surface-2); }
+.legend .l-done::before { background: var(--done-soft); border-color: var(--done); }
+.legend .l-sel::before { border-color: var(--accent); }
+
+/* detail + agenda lists */
+.detail-title { font-size: 17px; font-weight: 600; margin-top: 2px; }
+.goal { color: var(--muted); font-size: 14px; margin: 6px 0 14px; }
+ul.tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+ul.tasks li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: start;
+  padding: 9px 10px; border-radius: 8px; background: var(--surface-2); }
+ul.tasks li.is-done { background: transparent; border: 1px dashed var(--line); }
+ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--done); }
+.chk { appearance: none; width: 18px; height: 18px; margin: 2px 0 0; border: 1.5px solid var(--muted); border-radius: 5px; cursor: pointer; display: grid; place-items: center; background: var(--surface); flex: none; }
+.chk:checked { background: var(--done); border-color: var(--done); }
+.chk:checked::after { content: ""; width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0; transform: translateY(-1px) rotate(45deg); }
+.chk:disabled { cursor: default; opacity: .6; }
+.chk:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.txt { min-width: 0; }
+.tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; padding: 1px 6px; border-radius: 4px; margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+.tag.carry { background: var(--accent-soft); color: var(--accent); }
+.tag.moved { background: var(--surface); color: var(--muted); border: 1px solid var(--line); }
+.tag.from { background: var(--surface); color: var(--muted); border: 1px solid var(--line); }
+.act { appearance: none; font: inherit; font-size: 12px; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; cursor: pointer; white-space: nowrap; }
+.act:hover { color: var(--fg); border-color: var(--muted); }
+.act:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.agenda { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.count { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.count b { color: var(--fg); font-weight: 500; }
+.empty { color: var(--muted); font-size: 14px; padding: 10px 0; }
+.note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+.status { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+.status.err { color: var(--accent); }
+
+@media (max-width: 820px) {
+  .bench, .agenda { grid-template-columns: minmax(0, 1fr); }
+  .day { min-height: 54px; padding: 6px; }
+  .day .t { display: none; }
+  .progress-pct { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="progress" aria-label="Overall progress">
+    <div class="progress-head">
+      <div>
+        <div class="eyebrow">GTM Engineer · 30-day build · Oct 12 – Nov 10</div>
+        <h1>GTM Build Tracker</h1>
+      </div>
+      <div class="progress-pct"><span id="pct">—</span><span style="font-size:18px;color:var(--muted)">%</span></div>
+    </div>
+    <div class="bar" aria-hidden="true"><i id="barfill"></i><em id="barmark" title="Where today falls in the 30 days"></em></div>
+    <div class="bar-foot"><span id="bar-left">Loading the plan…</span><span id="bar-right"></span></div>
+    <div class="progress-meta" id="meta"></div>
+  </section>
+
+  <section class="bench">
+    <div class="panel">
+      <div class="panel-head"><h2>Calendar</h2><span class="status" id="status"></span></div>
+      <div class="cal-dow"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+      <div class="cal" id="cal" role="listbox" aria-label="Plan days"></div>
+      <div class="legend"><span class="l-today">Today</span><span class="l-done">All tasks done</span><span class="l-sel">Selected</span><span>Not finished — thin bar shows how far along</span></div>
+    </div>
+    <div class="panel" id="detail">
+      <div class="panel-head"><h2>Selected day</h2><span class="count" id="detail-count"></span></div>
+      <div class="eyebrow" id="detail-eyebrow"></div>
+      <div class="detail-title" id="detail-title">Pick a day on the calendar</div>
+      <div class="goal" id="detail-goal"></div>
+      <ul class="tasks" id="detail-tasks"></ul>
+    </div>
+  </section>
+
+  <section class="agenda">
+    <div class="panel">
+      <div class="panel-head"><h2>Today's Agenda</h2><span class="count" id="today-count"></span></div>
+      <div class="eyebrow" id="today-date"></div>
+      <ul class="tasks" id="today-tasks"></ul>
+      <div class="note">Carried items come first, in the order they were planned. Updated at the end of each working day.</div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Tomorrow's Tasks</h2><span class="count" id="tmrw-count"></span></div>
+      <div class="eyebrow" id="tmrw-date"></div>
+      <ul class="tasks" id="tmrw-tasks"></ul>
+      <div class="note">What's planned next, plus anything pushed from today. Anything pushed from today shows up here.</div>
+    </div>
+  </section>
+</div>
+
+<script src="plan.js"></script>
+<script>
+(() => {
+  const START = "2026-10-12", END = "2026-11-10";
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+  // --- dates (local calendar day) ---
+  const iso = (d) => d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  const parse = (s) => { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); };
+  const addDays = (s, n) => { const d = parse(s); d.setDate(d.getDate()+n); return iso(d); };
+  const fmt = (s, opts) => parse(s).toLocaleDateString(undefined, opts || { weekday: "short", month: "short", day: "numeric" });
+  const clampToPlan = (s) => s < START ? START : s > END ? END : s;
+  const todayISO = iso(new Date());
+  const TODAY = clampToPlan(todayISO);
+  const TOMORROW = addDays(TODAY, 1);
+
+  // --- state ---
+  let days = [];            // [{id, day, date, title, goal, tasks:[{id,text,done,moved?}]}]
+  let selected = TODAY;
+  let db = null, canWrite = false;
+  try { const s = localStorage.getItem("gtm.selected"); if (s && s >= START && s <= END) selected = s; } catch {}
+
+  const byDate = () => Object.fromEntries(days.map(d => [d.date, d]));
+  const effDate = (t, d) => t.moved || d.date;
+
+  // --- render: progress ---
+  function renderProgress() {
+    const all = days.flatMap(d => d.tasks), done = all.filter(t => t.done);
+    const pct = all.length ? Math.round(done.length / all.length * 100) : 0;
+    $("pct").textContent = all.length ? pct : "—";
+    $("barfill").style.width = pct + "%";
+    const dayIdx = Math.max(0, Math.min(29, Math.round((parse(TODAY) - parse(START)) / 86400000)));
+    $("barmark").style.left = "calc(" + ((dayIdx + 1) / 30 * 100) + "% - 1px)";
+    const fullDays = days.filter(d => d.tasks.length && d.tasks.every(t => t.done)).length;
+    $("bar-left").textContent = all.length ? `${done.length} of ${all.length} tasks done` : "Loading the plan…";
+    $("bar-right").textContent = all.length ? `Day ${dayIdx + 1} of 30 · ${Math.round((dayIdx + 1) / 30 * 100)}% of the calendar used` : "";
+    const open = all.filter(t => !t.done && effDate(t, days.find(d => d.tasks.includes(t))) < TODAY).length;
+    $("meta").innerHTML = all.length ? `<span><b>${fullDays}</b> of 30 days fully done</span><span><b>${open}</b> carried from earlier days</span><span>Week ${Math.min(5, Math.floor(dayIdx / 7) + 1)} of 5</span>` : "";
+  }
+
+  // --- render: calendar ---
+  function renderCal() {
+    const map = byDate(); const cal = $("cal"); cal.innerHTML = "";
+    let lastMonth = -1;
+    for (let i = 0; i < 30; i++) {
+      const date = addDays(START, i), d = map[date], dt = parse(date);
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "day"; b.setAttribute("role", "option"); b.dataset.date = date;
+      const total = d ? d.tasks.length : 0, done = d ? d.tasks.filter(t => t.done).length : 0;
+      if (total && done === total) b.classList.add("done");
+      if (date === TODAY) b.classList.add("today");
+      if (date < TODAY) b.classList.add("past");
+      if (date === selected) { b.classList.add("sel"); b.setAttribute("aria-selected", "true"); }
+      const showMonth = dt.getMonth() !== lastMonth; lastMonth = dt.getMonth();
+      b.innerHTML = `<div class="d"><span>${showMonth ? `<span class="month-mark">${dt.toLocaleDateString(undefined,{month:"short"})} </span>` : ""}${dt.getDate()}</span><small>d${i + 1}</small></div>
+        <div class="t">${d ? esc(d.title) : ""}</div>
+        <div class="p"><i style="width:${total ? done / total * 100 : 0}%"></i></div>`;
+      b.title = d ? `Day ${i + 1}: ${d.title} — ${done}/${total} done` : `Day ${i + 1}`;
+      b.addEventListener("click", () => { selected = date; try { localStorage.setItem("gtm.selected", date); } catch {} renderCal(); renderDetail(); });
+      cal.appendChild(b);
+    }
+  }
+
+  // --- render: task list (shared) ---
+  function taskItem(t, d, mode) {
+    const li = document.createElement("li"); li.className = t.done ? "is-done" : "";
+    const id = `chk-${t.id}-${mode}`;
+    let tags = "";
+    if (mode === "today" && effDate(t, d) < TODAY) tags += `<span class="tag carry">carried · d${d.day}</span>`;
+    else if (mode !== "detail" && d.date !== effDate(t, d)) tags += `<span class="tag from">from d${d.day}</span>`;
+    if (mode === "detail" && t.moved && t.moved !== d.date) tags += `<span class="tag moved">→ ${fmt(t.moved, { month: "short", day: "numeric" })}</span>`;
+    let action = "";
+    if (canWrite && !t.done && mode === "today") action = `<button class="act" data-act="push" data-task="${t.id}">Push →</button>`;
+    if (canWrite && !t.done && mode === "tmrw" && t.moved === TOMORROW) action = `<button class="act" data-act="pull" data-task="${t.id}">← Pull back</button>`;
+    li.innerHTML = `<input class="chk" type="checkbox" id="${id}" data-task="${t.id}" ${t.done ? "checked" : ""} ${canWrite ? "" : "disabled"}>
+      <label class="txt" for="${id}">${esc(t.text)}${tags}</label>${action}`;
+    return li;
+  }
+  function fill(ul, items, mode, emptyText) {
+    ul.innerHTML = "";
+    if (!items.length) { const li = document.createElement("li"); li.className = "empty"; li.style.background = "transparent"; li.style.display = "block"; li.textContent = emptyText; ul.appendChild(li); return; }
+    for (const [t, d] of items) ul.appendChild(taskItem(t, d, mode));
+  }
+
+  function renderDetail() {
+    const d = byDate()[selected];
+    if (!d) { $("detail-title").textContent = days.length ? "No plan for this day" : "Loading…"; $("detail-goal").textContent = ""; $("detail-tasks").innerHTML = ""; $("detail-eyebrow").textContent = ""; $("detail-count").textContent = ""; return; }
+    const done = d.tasks.filter(t => t.done).length;
+    $("detail-eyebrow").textContent = `Day ${d.day} · ${fmt(d.date, { weekday: "long", month: "long", day: "numeric" })}`;
+    $("detail-title").textContent = d.title;
+    $("detail-goal").textContent = d.goal || "";
+    $("detail-count").innerHTML = `<b>${done}</b>/${d.tasks.length} done`;
+    fill($("detail-tasks"), d.tasks.map(t => [t, d]), "detail", "No tasks listed.");
+  }
+
+  function renderAgenda() {
+    const pairs = days.flatMap(d => d.tasks.map(t => [t, d]));
+    const order = ([t, d]) => effDate(t, d) + "|" + String(d.day).padStart(2, "0") + "|" + t.id;
+    const today = pairs.filter(([t, d]) => { const e = effDate(t, d); return (!t.done && e < TODAY) || e === TODAY; })
+      .sort((a, b) => order(a) < order(b) ? -1 : 1);
+    const tmrw = pairs.filter(([t, d]) => effDate(t, d) === TOMORROW).sort((a, b) => order(a) < order(b) ? -1 : 1);
+    $("today-date").textContent = fmt(TODAY, { weekday: "long", month: "long", day: "numeric" }) + (todayISO !== TODAY ? " (plan " + (todayISO < START ? "starts" : "ended") + ")" : "");
+    $("tmrw-date").textContent = TOMORROW > END ? "Plan complete" : fmt(TOMORROW, { weekday: "long", month: "long", day: "numeric" });
+    const tOpen = today.filter(([t]) => !t.done).length;
+    $("today-count").innerHTML = `<b>${tOpen}</b> open · ${today.length} total`;
+    $("tmrw-count").innerHTML = `<b>${tmrw.length}</b> planned`;
+    fill($("today-tasks"), today, "today", days.length ? "Nothing left for today." : "Loading…");
+    fill($("tmrw-tasks"), tmrw, "tmrw", days.length ? "Nothing planned yet." : "Loading…");
+  }
+
+  function renderAll() { renderProgress(); renderCal(); renderDetail(); renderAgenda(); }
+
+  // --- writes ---
+  const writing = new Set();
+  async function mutate(taskId, fn) {
+    const d = days.find(x => x.tasks.some(t => t.id === taskId)); if (!d || !db || writing.has(d.id)) return;
+    const tasks = d.tasks.map(t => ({ ...t })); const t = tasks.find(t => t.id === taskId); fn(t);
+    writing.add(d.id); setStatus("saving…");
+    try { await db.doc("days/" + d.id).update({ tasks }); setStatus("saved"); }
+    catch (e) {
+      if (e && e.code === "invalid_argument") { canWrite = false; setStatus("read-only", true); renderAll(); }
+      else setStatus("save failed — try again", true);
+    } finally { writing.delete(d.id); }
+  }
+  document.addEventListener("change", (e) => {
+    const el = e.target; if (!(el instanceof HTMLInputElement) || !el.classList.contains("chk")) return;
+    const checked = el.checked;
+    mutate(el.dataset.task, t => { t.done = checked; if (checked) t.doneAt = todayISO; else delete t.doneAt; });
+  });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("button.act"); if (!b) return;
+    if (b.dataset.act === "push") mutate(b.dataset.task, t => { t.moved = TOMORROW; });
+    if (b.dataset.act === "pull") mutate(b.dataset.task, t => { if (t.moved === TOMORROW) { if (TODAY === originDate(t)) delete t.moved; else t.moved = TODAY; } });
+  });
+  const originDate = (t) => days.find(d => d.tasks.some(x => x.id === t.id))?.date;
+  let statusTimer; function setStatus(msg, err) { const s = $("status"); s.textContent = msg; s.classList.toggle("err", !!err); clearTimeout(statusTimer); if (!err) statusTimer = setTimeout(() => { s.textContent = ""; }, 1800); }
+
+  // --- boot (static copy: data ships in plan.js, updated at the end of each day) ---
+  const plan = window.PLAN || { days: [], updated: "" };
+  days = (plan.days || []).slice().sort((a, b) => a.day - b.day);
+  renderAll();
+  $("status").textContent = plan.updated ? "updated " + plan.updated : "";
+})();
+</script>
+</body>
+</html>
