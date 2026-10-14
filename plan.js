@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 14, 11:36 AM",
+ "updated": "Oct 14, 11:42 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -116,6 +116,11 @@ window.PLAN = {
      "done": false,
      "id": "d04-4",
      "text": "Define “activated” in one sentence; commit docs/analytics-events.md"
+    },
+    {
+     "done": false,
+     "id": "d04-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Event taxonomy",
@@ -145,6 +150,11 @@ window.PLAN = {
      "done": false,
      "id": "d05-4",
      "text": "Walk the funnel on a fresh account and verify in live view"
+    },
+    {
+     "done": false,
+     "id": "d05-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Instrument the site and the app",
@@ -174,6 +184,11 @@ window.PLAN = {
      "done": false,
      "id": "d06-4",
      "text": "Backfill from Firestore so the funnel is not empty"
+    },
+    {
+     "done": false,
+     "id": "d06-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Server-side events and the dashboard",
@@ -203,6 +218,11 @@ window.PLAN = {
      "done": false,
      "id": "d07-4",
      "text": "Plan check: anything undone from Days 1–6 gets a Day 8 slot"
+    },
+    {
+     "done": false,
+     "id": "d07-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Write-up 1",
@@ -232,6 +252,11 @@ window.PLAN = {
      "done": false,
      "id": "d08-4",
      "text": "Create the properties via the API from a committed script"
+    },
+    {
+     "done": false,
+     "id": "d08-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Data model",
@@ -261,6 +286,11 @@ window.PLAN = {
      "done": false,
      "id": "d09-4",
      "text": "Queue the calls through a Cloudflare Queue"
+    },
+    {
+     "done": false,
+     "id": "d09-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Write-back from the Workers",
@@ -285,6 +315,11 @@ window.PLAN = {
      "done": false,
      "id": "d10-3",
      "text": "Workflow 1: set lifecycle from properties"
+    },
+    {
+     "done": false,
+     "id": "d10-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Timeline events and lifecycle",
@@ -314,6 +349,11 @@ window.PLAN = {
      "done": false,
      "id": "d11-4",
      "text": "Workflow 4: score ≥ 80 → task + Slack webhook"
+    },
+    {
+     "done": false,
+     "id": "d11-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Lead score and triggered workflows",
@@ -338,6 +378,11 @@ window.PLAN = {
      "done": false,
      "id": "d12-3",
      "text": "Run the loop end to end from HubSpot"
+    },
+    {
+     "done": false,
+     "id": "d12-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Webhooks back into Mktforge",
@@ -362,6 +407,11 @@ window.PLAN = {
      "done": false,
      "id": "d13-3",
      "text": "Review all real accounts in HubSpot"
+    },
+    {
+     "done": false,
+     "id": "d13-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Reporting",
@@ -386,6 +436,11 @@ window.PLAN = {
      "done": false,
      "id": "d14-3",
      "text": "Sign up for Clay tonight so the trial starts Monday"
+    },
+    {
+     "done": false,
+     "id": "d14-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Write-up 2",
@@ -415,6 +470,11 @@ window.PLAN = {
      "done": false,
      "id": "d15-4",
      "text": "Pre-fill My Company industry and competitors via mktforge-access"
+    },
+    {
+     "done": false,
+     "id": "d15-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Enrichment in Clay",
@@ -444,6 +504,11 @@ window.PLAN = {
      "done": false,
      "id": "d16-4",
      "text": "Push the list to HubSpot with a play property"
+    },
+    {
+     "done": false,
+     "id": "d16-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Account sourcing",
@@ -473,6 +538,11 @@ window.PLAN = {
      "done": false,
      "id": "d17-4",
      "text": "Store final copy as mktforge_outreach_draft"
+    },
+    {
+     "done": false,
+     "id": "d17-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Personalization through Mktforge",
@@ -502,6 +572,11 @@ window.PLAN = {
      "done": false,
      "id": "d18-4",
      "text": "Daily send caps (30/mailbox) and suppression list"
+    },
+    {
+     "done": false,
+     "id": "d18-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Sending infrastructure and deliverability",
@@ -531,6 +606,11 @@ window.PLAN = {
      "done": false,
      "id": "d19-4",
      "text": "Unsubscribe → suppress across every list"
+    },
+    {
+     "done": false,
+     "id": "d19-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Reply handling and handoff",
@@ -560,6 +640,11 @@ window.PLAN = {
      "done": false,
      "id": "d20-4",
      "text": "Schedule remaining batches at 60/day through Nov 6"
+    },
+    {
+     "done": false,
+     "id": "d20-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Launch the campaign",
@@ -584,6 +669,11 @@ window.PLAN = {
      "done": false,
      "id": "d21-3",
      "text": "Start the Firestore and PostHog export scripts"
+    },
+    {
+     "done": false,
+     "id": "d21-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Write-up 3",
@@ -618,6 +708,11 @@ window.PLAN = {
      "done": false,
      "id": "d22-5",
      "text": "Campaign check: replies, bounces, domain health"
+    },
+    {
+     "done": false,
+     "id": "d22-6",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Warehouse and loaders",
@@ -657,6 +752,11 @@ window.PLAN = {
      "done": false,
      "id": "d23-6",
      "text": "Keep every query in analytics/sql/ with a one-line interpretation"
+    },
+    {
+     "done": false,
+     "id": "d23-7",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "SQL day",
@@ -686,6 +786,11 @@ window.PLAN = {
      "done": false,
      "id": "d24-4",
      "text": "Run on a GitHub Actions schedule after the loads"
+    },
+    {
+     "done": false,
+     "id": "d24-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "dbt models",
@@ -710,6 +815,11 @@ window.PLAN = {
      "done": false,
      "id": "d25-3",
      "text": "Book interested replies into calls"
+    },
+    {
+     "done": false,
+     "id": "d25-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Metrics dashboard and campaign results",
@@ -734,6 +844,11 @@ window.PLAN = {
      "done": false,
      "id": "d26-3",
      "text": "Trade-offs note: BigQuery vs Postgres, dbt vs SQL, Looker vs module"
+    },
+    {
+     "done": false,
+     "id": "d26-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Write-up 4 and the architecture page",
@@ -758,6 +873,11 @@ window.PLAN = {
      "done": false,
      "id": "d27-3",
      "text": "“Marketing Engineering” card on the portfolio index"
+    },
+    {
+     "done": false,
+     "id": "d27-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "The flagship case study",
@@ -782,6 +902,11 @@ window.PLAN = {
      "done": false,
      "id": "d28-3",
      "text": "Ask two former colleagues for a recommendation"
+    },
+    {
+     "done": false,
+     "id": "d28-4",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Resume and LinkedIn",
@@ -821,6 +946,11 @@ window.PLAN = {
      "done": false,
      "id": "d29-6",
      "text": "Run each answer out loud; cut anything over two minutes"
+    },
+    {
+     "done": false,
+     "id": "d29-7",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Rehearse the story",
@@ -850,6 +980,11 @@ window.PLAN = {
      "done": false,
      "id": "d30-4",
      "text": "Book two coffee chats with people holding the title"
+    },
+    {
+     "done": false,
+     "id": "d30-5",
+     "text": "Update the dashboard (plan.js → push)"
     }
    ],
    "title": "Apply and pipeline the search",
