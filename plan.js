@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 15, 11:30 AM",
+ "updated": "Oct 15, 11:55 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -137,7 +137,7 @@ window.PLAN = {
    "goal": "Browser events flowing from mktforge.io and app.mktforge.io.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d05-1",
      "text": "Add the PostHog snippet to site and app; identify on sign-in"
     },
