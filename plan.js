@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 14, 3:36 PM",
+ "updated": "Oct 15, 11:30 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -98,32 +98,32 @@ window.PLAN = {
    "goal": "A written list of the events that define activation, before any code.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d04-0",
      "text": "Create the Apollo free account with tyler@getmktforge.com, verify, confirm search works (15 min)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d04-1",
      "text": "Sign up for PostHog; read the event naming guide (60 min)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d04-2",
      "text": "Write the event taxonomy in a doc"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d04-3",
      "text": "Define the properties every event carries"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d04-4",
      "text": "Define “activated” in one sentence; commit docs/analytics-events.md"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d04-5",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -154,11 +154,16 @@ window.PLAN = {
     {
      "done": false,
      "id": "d05-4",
-     "text": "Walk the funnel on a fresh account and verify in live view"
+     "text": "CI check: every capture() name in the code must appear in docs/analytics-events.md"
     },
     {
      "done": false,
      "id": "d05-5",
+     "text": "Walk the funnel on a fresh account and verify in live view"
+    },
+    {
+     "done": false,
+     "id": "d05-6",
      "text": "Update the dashboard (plan.js → push)"
     }
    ],
@@ -1048,7 +1053,7 @@ window.PLAN = {
    "id": "posthog",
    "name": "PostHog",
    "group": "Product analytics",
-   "usedDay": null
+   "usedDay": 4
   },
   {
    "id": "hs-props",
@@ -1108,7 +1113,7 @@ window.PLAN = {
    "id": "apollo",
    "name": "Apollo",
    "group": "Outbound & deliverability",
-   "usedDay": null
+   "usedDay": 4
   },
   {
    "id": "clay",
