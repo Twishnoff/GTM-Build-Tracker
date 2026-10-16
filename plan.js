@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 15, 11:55 AM",
+ "updated": "Oct 16, 10:05 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -142,27 +142,32 @@ window.PLAN = {
      "text": "Add the PostHog snippet to site and app; identify on sign-in"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d05-2",
      "text": "Fire signup, verification, key-added, company-created events"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d05-3",
      "text": "Fire module_run_started from module-kit.js"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d05-4",
      "text": "CI check: every capture() name in the code must appear in docs/analytics-events.md"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d05-5",
      "text": "Walk the funnel on a fresh account and verify in live view"
     },
     {
-     "done": false,
+     "done": true,
+     "id": "d05-7",
+     "text": "Mermaid flowchart of the lead path in the Mktforge README (20 min)"
+    },
+    {
+     "done": true,
      "id": "d05-6",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1008,141 +1013,147 @@ window.PLAN = {
  ],
  "tools": [
   {
+   "group": "Build & deploy",
    "id": "git",
    "name": "Git & GitHub",
-   "group": "Build & deploy",
    "usedDay": 1
   },
   {
+   "group": "Build & deploy",
    "id": "gh",
    "name": "GitHub CLI",
-   "group": "Build & deploy",
    "usedDay": 1
   },
   {
+   "group": "Build & deploy",
    "id": "vscode",
    "name": "VS Code",
-   "group": "Build & deploy",
    "usedDay": 1
   },
   {
+   "group": "Build & deploy",
    "id": "workers",
    "name": "Cloudflare Workers / wrangler",
-   "group": "Build & deploy",
    "usedDay": 1
   },
   {
+   "group": "Build & deploy",
    "id": "cfqueue",
    "name": "Cloudflare Queues & KV",
-   "group": "Build & deploy",
    "usedDay": 3
   },
   {
+   "group": "Build & deploy",
    "id": "actions",
    "name": "GitHub Actions (CI)",
-   "group": "Build & deploy",
    "usedDay": 3
   },
   {
+   "group": "Build & deploy",
+   "id": "mermaid",
+   "name": "Mermaid diagrams",
+   "usedDay": 5
+  },
+  {
+   "group": "Build & deploy",
    "id": "claude",
    "name": "Claude API",
-   "group": "Build & deploy",
    "usedDay": 1
   },
   {
+   "group": "Product analytics",
    "id": "posthog",
    "name": "PostHog",
-   "group": "Product analytics",
    "usedDay": 4
   },
   {
+   "group": "CRM & automation",
    "id": "hs-props",
    "name": "HubSpot properties & workflows",
-   "group": "CRM & automation",
    "usedDay": null
   },
   {
+   "group": "CRM & automation",
    "id": "hs-api",
    "name": "HubSpot API & webhooks",
-   "group": "CRM & automation",
    "usedDay": null
   },
   {
+   "group": "CRM & automation",
    "id": "hs-seq",
    "name": "HubSpot Sequences",
-   "group": "CRM & automation",
    "usedDay": null
   },
   {
+   "group": "CRM & automation",
    "id": "zapier",
    "name": "Zapier",
-   "group": "CRM & automation",
    "usedDay": null
   },
   {
+   "group": "CRM & automation",
    "id": "slack",
    "name": "Slack webhooks",
-   "group": "CRM & automation",
    "usedDay": null
   },
   {
+   "group": "Outbound & deliverability",
    "id": "m365",
    "name": "Microsoft 365 mailboxes",
-   "group": "Outbound & deliverability",
    "usedDay": 2
   },
   {
+   "group": "Outbound & deliverability",
    "id": "dns",
    "name": "DNS: SPF / DKIM / DMARC (Porkbun)",
-   "group": "Outbound & deliverability",
    "usedDay": 2
   },
   {
+   "group": "Outbound & deliverability",
    "id": "mailreach",
    "name": "Mailreach warm-up",
-   "group": "Outbound & deliverability",
    "usedDay": 2
   },
   {
+   "group": "Outbound & deliverability",
    "id": "mxtoolbox",
    "name": "MXToolbox",
-   "group": "Outbound & deliverability",
    "usedDay": null
   },
   {
+   "group": "Outbound & deliverability",
    "id": "apollo",
    "name": "Apollo",
-   "group": "Outbound & deliverability",
    "usedDay": 4
   },
   {
+   "group": "Outbound & deliverability",
    "id": "clay",
    "name": "Clay",
-   "group": "Outbound & deliverability",
    "usedDay": null
   },
   {
+   "group": "Data layer",
    "id": "bigquery",
    "name": "BigQuery",
-   "group": "Data layer",
    "usedDay": null
   },
   {
+   "group": "Data layer",
    "id": "sql",
    "name": "SQL",
-   "group": "Data layer",
    "usedDay": null
   },
   {
+   "group": "Data layer",
    "id": "dbt",
    "name": "dbt Core",
-   "group": "Data layer",
    "usedDay": null
   },
   {
+   "group": "Data layer",
    "id": "looker",
    "name": "Looker Studio",
-   "group": "Data layer",
    "usedDay": null
   }
  ]
