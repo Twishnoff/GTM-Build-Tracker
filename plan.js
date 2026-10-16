@@ -1052,7 +1052,7 @@ window.PLAN = {
    "group": "Build & deploy",
    "id": "mermaid",
    "name": "Mermaid diagrams",
-   "usedDay": 5
+   "usedDay": null
   },
   {
    "group": "Build & deploy",
