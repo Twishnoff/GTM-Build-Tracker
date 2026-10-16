@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 16, 10:05 AM",
+ "updated": "Oct 16, 12:15 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -181,27 +181,27 @@ window.PLAN = {
    "goal": "Workers report completed runs; one dashboard shows the funnel.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d06-1",
      "text": "Send module_run_completed from each Worker via the shared module"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d06-2",
      "text": "Build the activation funnel in PostHog"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d06-3",
      "text": "Second insight: runs per module per week, by plan"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d06-4",
      "text": "Backfill from Firestore so the funnel is not empty"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d06-5",
      "text": "Update the dashboard (plan.js → push)"
     }
