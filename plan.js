@@ -215,27 +215,27 @@ window.PLAN = {
    "goal": "Publish “Instrumenting a PLG funnel from scratch”.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d07-1",
      "text": "Write the post (taxonomy, funnel chart, what surprised you)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d07-2",
      "text": "Two screenshots: Actions deploy log, PostHog funnel"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d07-3",
      "text": "Post on portfolio and LinkedIn; trade-offs line"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d07-4",
      "text": "Plan check: anything undone from Days 1–6 gets a Day 8 slot"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d07-5",
      "text": "Update the dashboard (plan.js → push)"
     }
