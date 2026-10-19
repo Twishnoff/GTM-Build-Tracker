@@ -249,27 +249,27 @@ window.PLAN = {
    "goal": "Decide what HubSpot should know about a Mktforge user.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d08-1",
      "text": "Close out Week 1 leftovers (2 hours max)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d08-2",
      "text": "Design the mktforge_* contact properties and company set"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d08-3",
      "text": "Decide contact vs custom object; write the trade-off down"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d08-4",
      "text": "Create the properties via the API from a committed script"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d08-5",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1070,13 +1070,13 @@ window.PLAN = {
    "group": "CRM & automation",
    "id": "hs-props",
    "name": "HubSpot properties & workflows",
-   "usedDay": null
+   "usedDay": 8
   },
   {
    "group": "CRM & automation",
    "id": "hs-api",
    "name": "HubSpot API & webhooks",
-   "usedDay": null
+   "usedDay": 8
   },
   {
    "group": "CRM & automation",
