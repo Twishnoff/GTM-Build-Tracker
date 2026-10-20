@@ -283,27 +283,27 @@ window.PLAN = {
    "goal": "Workers push user state to HubSpot.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d09-1",
      "text": "Add a hubspot-sync helper to the shared module"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d09-2",
      "text": "Call it from mktforge-access and each module Worker"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d09-3",
-     "text": "Private-app token for your own portal"
+     "text": "Service Key for your own portal"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d09-4",
      "text": "Queue the calls through a Cloudflare Queue"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d09-5",
      "text": "Update the dashboard (plan.js → push)"
     }
