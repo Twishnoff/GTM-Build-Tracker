@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 16, 12:15 PM",
+ "updated": "Oct 21, 4:30 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -317,22 +317,22 @@ window.PLAN = {
    "goal": "Every action shows on the contact timeline; lifecycle moves itself.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d10-1",
-     "text": "Custom timeline event template “Mktforge module run”"
+     "text": "Per-run Note on the contact (timeline-events API is partner-only)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d10-2",
      "text": "Map lifecycle stages to Mktforge states"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d10-3",
-     "text": "Workflow 1: set lifecycle from properties"
+     "text": "Lifecycle + activation set by hubspot-sync (workflows are Pro-only)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d10-4",
      "text": "Update the dashboard (plan.js → push)"
     }
