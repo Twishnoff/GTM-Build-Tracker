@@ -343,25 +343,25 @@ window.PLAN = {
   {
    "date": "2026-10-22",
    "day": 11,
-   "goal": "A score that ranks users, and three workflows that act on it.",
+   "goal": "A score that ranks users, computed in the Worker, and flags the Day 18 sender acts on.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d11-1",
-     "text": "Implement the lead score as a HubSpot score property"
+     "text": "mktforge_score computed in hubspot-sync (score property + workflows are Pro-only)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d11-2",
-     "text": "Workflow 2: verified but no run after 48h → nudge email"
+     "text": "Daily cron: 14-day idle decay + nudge flag (verified, no run after 48h)"
     },
     {
      "done": false,
      "id": "d11-3",
-     "text": "Workflow 3: activated on BYOK → three-email hosted sequence"
+     "text": "next_module_due flag (activated, any plan) + write the three emails (wired Day 18)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d11-4",
      "text": "Workflow 4: score ≥ 80 → Zapier Zap: Slack post + HubSpot task + hot-accounts sheet row"
     },
@@ -1088,7 +1088,7 @@ window.PLAN = {
    "group": "CRM & automation",
    "id": "zapier",
    "name": "Zapier",
-   "usedDay": null
+   "usedDay": 11
   },
   {
    "group": "CRM & automation",
