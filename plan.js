@@ -380,22 +380,22 @@ window.PLAN = {
    "goal": "HubSpot can change Mktforge, not only read from it.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d12-1",
      "text": "Webhook endpoint on mktforge-access flips the KV allowlist"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d12-2",
      "text": "Verify the HubSpot signature on every call"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d12-3",
      "text": "Run the loop end to end from HubSpot"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d12-4",
      "text": "Update the dashboard (plan.js → push)"
     }
