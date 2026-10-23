@@ -356,9 +356,9 @@ window.PLAN = {
      "text": "Daily cron: 14-day idle decay + nudge flag (verified, no run after 48h)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d11-3",
-     "text": "next_module_due flag (activated, any plan) + write the three emails (wired Day 18)"
+     "text": "next_module_due flag (activated, any plan) + three email drafts (docs/emails, wired Day 18)"
     },
     {
      "done": true,
@@ -366,7 +366,7 @@ window.PLAN = {
      "text": "Workflow 4: score ≥ 80 → Zapier Zap: Slack post + HubSpot task + hot-accounts sheet row"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d11-5",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -426,6 +426,16 @@ window.PLAN = {
     {
      "done": false,
      "id": "d13-4",
+     "text": "mktforge_next_module set by hubspot-sync from the run worker name (email 2 copy block)"
+    },
+    {
+     "done": false,
+     "id": "d13-5",
+     "text": "Examples page on mktforge.io: index of every example asset, one anchor per module (both emails link to it)"
+    },
+    {
+     "done": false,
+     "id": "d13-6",
      "text": "Update the dashboard (plan.js → push)"
     }
    ],
@@ -630,6 +640,11 @@ window.PLAN = {
     {
      "done": false,
      "id": "d19-5",
+     "text": "Refine the three emails before any real send (docs/emails/README checklist)"
+    },
+    {
+     "done": false,
+     "id": "d19-6",
      "text": "Update the dashboard (plan.js → push)"
     }
    ],
