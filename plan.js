@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 21, 4:30 PM",
+ "updated": "Oct 24, 8:00 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -411,30 +411,30 @@ window.PLAN = {
     {
      "done": false,
      "id": "d13-1",
-     "text": "Reports: signups, activation, score distribution, enrollments"
+     "text": "Reports: signups, activation, score distribution (carried to Day 14 morning)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d13-2",
-     "text": "Reconcile counts with PostHog; fix the sync where they differ"
+     "text": "Reconcile counts with PostHog (reconcile.mjs, re-runnable); seed pre-sync history into HubSpot"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d13-3",
-     "text": "Review all real accounts in HubSpot"
+     "text": "Review all real accounts in HubSpot (6, exact match both sides)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d13-4",
-     "text": "mktforge_next_module set by hubspot-sync from the run worker name (email 2 copy block)"
+     "text": "mktforge_modules_run (checkboxes) + mktforge_next_module derived by hubspot-sync (email 2 copy block)"
     },
     {
      "done": false,
      "id": "d13-5",
-     "text": "Examples page on mktforge.io: index of every example asset, one anchor per module (both emails link to it)"
+     "text": "Examples page on mktforge.io: index of every example asset, one anchor per module (carried to Day 14 morning)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d13-6",
      "text": "Update the dashboard (plan.js → push)"
     }
