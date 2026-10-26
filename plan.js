@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 25, 6:00 PM",
+ "updated": "Oct 26, 2:40 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -477,32 +477,32 @@ window.PLAN = {
    "goal": "Every new signup is enriched by domain and written back to HubSpot.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d15-0",
-     "text": "First: start the Clay Growth 14-day trial (CRM sync and write-back are Growth-only)"
+     "text": "Clay Growth 14-day trial started (fresh workspace on tyler@getmktforge.com; 1K credits, 5K actions)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d15-1",
-     "text": "Clay table fed by a HubSpot trigger; enrichment waterfall"
+     "text": "Company sync first (unplanned): My Company → HubSpot Company on the contact, primary domain as the enrichment key; 8 existing companies seeded (Workers PRs #17, #18; app PR)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d15-2",
-     "text": "ICP score column with a formula"
+     "text": "Clay table off the Mktforge Users list: Enrich company, B2B classifier, marketing-hire count, ICP formula (gates + points, 0–100)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d15-3",
-     "text": "Write enriched fields back to HubSpot contact and company"
+     "text": "Write-back: enrichment to the HubSpot Company, ICP score to the Contact; Zap “HubSpot domain → Clay” for near-real-time rows (poll is daily)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d15-4",
-     "text": "Pre-fill My Company industry and competitors via mktforge-access"
+     "text": "Cut: My Company pre-fill from enrichment (first item on the plan’s cut list)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d15-5",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1150,7 +1150,7 @@ window.PLAN = {
    "group": "Outbound & deliverability",
    "id": "clay",
    "name": "Clay",
-   "usedDay": null
+   "usedDay": 15
   },
   {
    "group": "Data layer",
