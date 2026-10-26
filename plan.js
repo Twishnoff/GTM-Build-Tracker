@@ -458,9 +458,9 @@ window.PLAN = {
      "text": "Trade-offs note: Free-tier reports, examples page, Build Positioning stage 5 fix, squash-merge lesson"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d14-3",
-     "text": "Sign up for Clay tonight so the trial starts Monday"
+     "text": "Clay account (already existed, Free plan); Growth trial starts Day 15 morning so its 14 days cover the campaign"
     },
     {
      "done": true,
@@ -476,6 +476,11 @@ window.PLAN = {
    "day": 15,
    "goal": "Every new signup is enriched by domain and written back to HubSpot.",
    "tasks": [
+    {
+     "done": false,
+     "id": "d15-0",
+     "text": "First: start the Clay Growth 14-day trial (CRM sync and write-back are Growth-only)"
+    },
     {
      "done": false,
      "id": "d15-1",
