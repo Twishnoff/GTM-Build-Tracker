@@ -409,9 +409,9 @@ window.PLAN = {
    "goal": "One HubSpot dashboard that answers “how is Mktforge doing this week”.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d13-1",
-     "text": "Reports: signups, activation, score distribution (carried to Day 14 morning)"
+     "text": "Reports: Free-tier dashboard (stage, created by day, by source); activation + score wait for Week 4 warehouse"
     },
     {
      "done": true,
@@ -429,9 +429,9 @@ window.PLAN = {
      "text": "mktforge_modules_run (checkboxes) + mktforge_next_module derived by hubspot-sync (email 2 copy block)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d13-5",
-     "text": "Examples page on mktforge.io: index of every example asset, one anchor per module (carried to Day 14 morning)"
+     "text": "Examples page on mktforge.io: nine module cards, one real PDF per module; emails link straight to the PDFs"
     },
     {
      "done": true,
@@ -448,14 +448,14 @@ window.PLAN = {
    "goal": "Publish “PLG signals into HubSpot”.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d14-1",
-     "text": "Write-up with data model diagram, score logic, workflow screenshot"
+     "text": "Write-up 2 published on LinkedIn: pipeline diagram, score logic, Zap screenshot (no workflow exists to screenshot)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d14-2",
-     "text": "Trade-offs note: properties vs object, queue vs direct, score"
+     "text": "Trade-offs note: Free-tier reports, examples page, Build Positioning stage 5 fix, squash-merge lesson"
     },
     {
      "done": false,
@@ -463,7 +463,7 @@ window.PLAN = {
      "text": "Sign up for Clay tonight so the trial starts Monday"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d14-4",
      "text": "Update the dashboard (plan.js → push)"
     }
