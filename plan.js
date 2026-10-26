@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 24, 8:00 PM",
+ "updated": "Oct 25, 6:00 PM",
  "days": [
   {
    "date": "2026-10-12",
