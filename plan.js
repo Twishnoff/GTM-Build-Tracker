@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 26, 2:40 PM",
+ "updated": "Oct 27, 4:45 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -516,32 +516,32 @@ window.PLAN = {
    "goal": "200 target accounts and 300 contacts from a repeatable process.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d16-1",
-     "text": "Define the play in one paragraph"
+     "text": "Define the play in one paragraph (founders-trial-2026-10)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d16-2",
-     "text": "Source in Apollo (free): ICP filters, pick 200 accounts, copy out by domain"
+     "text": "Source in Apollo (Pro trial): ICP filters, 107 of 432 accounts exported before the search cap"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d16-3",
-     "text": "Clay: load domains, no-marketing-title check, dedupe against HubSpot"
+     "text": "Clay: prospects tables, shared ICP functions, title flag"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d16-4",
-     "text": "Find and verify email for founder or first GTM hire"
+     "text": "Find and verify one founder email per company (domain match + review)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d16-5",
-     "text": "Push the list to HubSpot with a play property"
+     "text": "Push 92 contacts to HubSpot with play / source / recency; static list"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d16-6",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1144,7 +1144,7 @@ window.PLAN = {
    "group": "Outbound & deliverability",
    "id": "apollo",
    "name": "Apollo",
-   "usedDay": 4
+   "usedDay": 16
   },
   {
    "group": "Outbound & deliverability",
