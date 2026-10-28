@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 27, 4:45 PM",
+ "updated": "Oct 28, 3:30 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -555,9 +555,14 @@ window.PLAN = {
    "goal": "Target Messaging produces the first-touch email for every contact.",
    "tasks": [
     {
+     "done": true,
+     "id": "d17-0",
+     "text": "Wed: close Day 16 carry-overs (PRs merged, tracker pushed, Simantic row kept on the shared-name-token rule)"
+    },
+    {
      "done": false,
      "id": "d17-1",
-     "text": "Batch mode on the target-messaging Worker over a HubSpot list"
+     "text": "Thu: un-bundle target-messaging; batch mode on the Worker over a HubSpot list"
     },
     {
      "done": false,
@@ -567,7 +572,7 @@ window.PLAN = {
     {
      "done": false,
      "id": "d17-3",
-     "text": "Review 30 drafts, note failure patterns, tighten the prompt once"
+     "text": "Fri AM: review 30 drafts, note failure patterns, tighten the prompt once"
     },
     {
      "done": false,
