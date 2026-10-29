@@ -552,7 +552,7 @@ window.PLAN = {
   {
    "date": "2026-10-28",
    "day": 17,
-   "goal": "Target Messaging produces the first-touch email for every contact.",
+   "goal": "One persona-driven first-touch template, dogfooded from Target Messaging (the 92 per-contact drafts were dropped: cold imports carry nothing to differentiate on).",
    "tasks": [
     {
      "done": true,
@@ -560,27 +560,27 @@ window.PLAN = {
      "text": "Wed: close Day 16 carry-overs (PRs merged, tracker pushed, Simantic row kept on the shared-name-token rule)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d17-1",
-     "text": "Thu: un-bundle target-messaging; batch mode on the Worker over a HubSpot list"
+     "text": "Thu: run the Mktforge chain on Mktforge itself (persona → positioning vs M1-Project → messaging → Target Messaging)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d17-2",
-     "text": "Quality gate: second pass scores drafts 1–5; under 4 to review"
+     "text": "Rewrite the output into a founder-to-founder email; subject line; tokens first name + company only"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d17-3",
-     "text": "Fri AM: review 30 drafts, note failure patterns, tighten the prompt once"
+     "text": "Name the win before launch: one founder through the full loop, ~5% replies as the input"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d17-4",
-     "text": "Store final copy as mktforge_outreach_draft"
+     "text": "Save docs/emails/founders-trial-2026-10.md and the Day 17 trade-offs line in Mktforge-Website"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d17-5",
      "text": "Update the dashboard (plan.js → push)"
     }
