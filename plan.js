@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 28, 3:30 PM",
+ "updated": "Oct 29, 4:30 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -550,7 +550,7 @@ window.PLAN = {
    "id": "d16"
   },
   {
-   "date": "2026-10-28",
+   "date": "2026-10-29",
    "day": 17,
    "goal": "One persona-driven first-touch template, dogfooded from Target Messaging (the 92 per-contact drafts were dropped: cold imports carry nothing to differentiate on).",
    "tasks": [
@@ -589,7 +589,7 @@ window.PLAN = {
    "id": "d17"
   },
   {
-   "date": "2026-10-29",
+   "date": "2026-10-30",
    "day": 18,
    "goal": "A sending setup that will not burn mktforge.io.",
    "tasks": [
@@ -623,7 +623,7 @@ window.PLAN = {
    "id": "d18"
   },
   {
-   "date": "2026-10-30",
+   "date": "2026-11-01",
    "day": 19,
    "goal": "Replies triaged automatically; interested ones get full context.",
    "tasks": [
@@ -649,11 +649,6 @@ window.PLAN = {
     },
     {
      "done": false,
-     "id": "d19-5",
-     "text": "Refine the three emails before any real send (docs/emails/README checklist)"
-    },
-    {
-     "done": false,
      "id": "d19-6",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -668,8 +663,13 @@ window.PLAN = {
    "tasks": [
     {
      "done": false,
+     "id": "d20-0",
+     "text": "Sat AM: refine the outreach template and the three lifecycle emails before any real send (docs/emails)"
+    },
+    {
+     "done": false,
      "id": "d20-1",
-     "text": "Final read of the top-scored 60 drafts; send"
+     "text": "Final read of the template against the 92; send the first 60"
     },
     {
      "done": false,
@@ -703,7 +703,7 @@ window.PLAN = {
     {
      "done": false,
      "id": "d21-1",
-     "text": "Write-up: play, sourcing, quality gate pass rate, deliverability"
+     "text": "Write-up: play, sourcing, one template over 92 drafts, deliverability"
     },
     {
      "done": false,
