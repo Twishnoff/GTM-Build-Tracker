@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 29, 4:30 PM",
+ "updated": "Oct 29, 4:50 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -550,7 +550,7 @@ window.PLAN = {
    "id": "d16"
   },
   {
-   "date": "2026-10-29",
+   "date": "2026-10-28",
    "day": 17,
    "goal": "One persona-driven first-touch template, dogfooded from Target Messaging (the 92 per-contact drafts were dropped: cold imports carry nothing to differentiate on).",
    "tasks": [
@@ -562,26 +562,31 @@ window.PLAN = {
     {
      "done": true,
      "id": "d17-1",
+     "moved": "2026-10-29",
      "text": "Thu: run the Mktforge chain on Mktforge itself (persona → positioning vs M1-Project → messaging → Target Messaging)"
     },
     {
      "done": true,
      "id": "d17-2",
+     "moved": "2026-10-29",
      "text": "Rewrite the output into a founder-to-founder email; subject line; tokens first name + company only"
     },
     {
      "done": true,
      "id": "d17-3",
+     "moved": "2026-10-29",
      "text": "Name the win before launch: one founder through the full loop, ~5% replies as the input"
     },
     {
      "done": true,
      "id": "d17-4",
+     "moved": "2026-10-29",
      "text": "Save docs/emails/founders-trial-2026-10.md and the Day 17 trade-offs line in Mktforge-Website"
     },
     {
      "done": true,
      "id": "d17-5",
+     "moved": "2026-10-29",
      "text": "Update the dashboard (plan.js → push)"
     }
    ],
