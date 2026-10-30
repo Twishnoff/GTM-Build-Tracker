@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 29, 4:50 PM",
+ "updated": "Oct 30, 11:00 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -596,30 +596,30 @@ window.PLAN = {
   {
    "date": "2026-10-30",
    "day": 18,
-   "goal": "A sending setup that will not burn mktforge.io.",
+   "goal": "A sending setup that will not burn mktforge.io: HubSpot Sequences on a Sales Hub Pro trial, both getmktforge.com mailboxes clean, launch Mon Nov 2.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d18-1",
-     "text": "Warm-up check: placement, blacklists, SPF/DKIM/DMARC on a test send"
+     "text": "Warm-up check: 4/4 inbox (both mailboxes × Gmail + Outlook), Heatwave not listed, 0/68 blacklists, DMARC valid (p=none)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d18-2",
-     "text": "Pick the sender (HubSpot Sequences unless forced otherwise)"
+     "text": "Sender: Sales Hub Professional 14-day trial (Starter has no Sequences; Graph script rejected to keep the HubSpot record); both mailboxes connected as personal inboxes"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d18-3",
-     "text": "Build the 3-step sequence"
+     "text": "Sequence founders-trial-2026-10: one step, tokens first name (fallback 'there') + company; unenroll on reply/meeting; unsubscribe link on; 7 AM–4 PM weekdays"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d18-4",
-     "text": "Daily send caps (30/mailbox) and suppression list"
+     "text": "Ramp set by the clean check: Mon 10 / Tue 20 / Wed 30 / Thu 32, split across mailboxes, each day gated on <2% bounces; do-not-contact segment; 89 sendable of 92 (two ICP 0s skipped)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d18-5",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -662,34 +662,36 @@ window.PLAN = {
    "id": "d19"
   },
   {
-   "date": "2026-10-31",
+   "date": "2026-11-02",
    "day": 20,
-   "goal": "First 60 contacts out, the rest scheduled over the week.",
+   "goal": "Launch Monday: first 10 scheduled ahead for 7 AM PT, the ramp enrolled the evening before each day, all 89 out by Thursday.",
    "tasks": [
     {
      "done": false,
      "id": "d20-0",
-     "text": "Sat AM: refine the outreach template and the three lifecycle emails before any real send (docs/emails)"
+     "moved": "2026-10-31",
+     "text": "Sat AM: refine the outreach template (postal address line) and the three lifecycle emails before any real send (docs/emails)"
     },
     {
      "done": false,
      "id": "d20-1",
-     "text": "Final read of the template against the 92; send the first 60"
+     "moved": "2026-10-31",
+     "text": "Sat: enroll Monday's top 10 by ICP score (skip the two 0s), scheduled for Mon 7:00 AM PT, 5 per mailbox"
     },
     {
      "done": false,
      "id": "d20-2",
-     "text": "HubSpot dashboard for the play"
+     "text": "Mon after the CEO call: check bounces, complaints and placement on the first 10; pause if anything is off"
     },
     {
      "done": false,
      "id": "d20-3",
-     "text": "Watch bounces and complaints for two hours; pause if >3%"
+     "text": "Tue 20 / Wed 30 / Thu 32: enroll each batch the evening before, gated on the previous day's bounces under 2% and zero complaints"
     },
     {
      "done": false,
      "id": "d20-4",
-     "text": "Schedule remaining batches at 60/day through Nov 6"
+     "text": "HubSpot dashboard for the play; weekly Heatwave recheck"
     },
     {
      "done": false,
@@ -1112,7 +1114,7 @@ window.PLAN = {
    "group": "CRM & automation",
    "id": "hs-seq",
    "name": "HubSpot Sequences",
-   "usedDay": null
+   "usedDay": 18
   },
   {
    "group": "CRM & automation",
@@ -1148,7 +1150,7 @@ window.PLAN = {
    "group": "Outbound & deliverability",
    "id": "mxtoolbox",
    "name": "MXToolbox",
-   "usedDay": null
+   "usedDay": 18
   },
   {
    "group": "Outbound & deliverability",
