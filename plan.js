@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 31, 6:55 PM",
+ "updated": "Nov 1, 12:05 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -494,12 +494,12 @@ window.PLAN = {
     {
      "done": true,
      "id": "d15-3",
-     "text": "Write-back: enrichment to the HubSpot Company, ICP score to the Contact; Zap “HubSpot domain → Clay” for near-real-time rows (poll is daily)"
+     "text": "Write-back: enrichment to the HubSpot Company, ICP score to the Contact; Zap \"HubSpot domain → Clay\" for near-real-time rows (poll is daily)"
     },
     {
      "done": true,
      "id": "d15-4",
-     "text": "Cut: My Company pre-fill from enrichment (first item on the plan’s cut list)"
+     "text": "Cut: My Company pre-fill from enrichment (first item on the plan's cut list)"
     },
     {
      "done": true,
@@ -633,27 +633,32 @@ window.PLAN = {
    "goal": "Replies triaged automatically; interested ones get full context.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d19-1",
-     "text": "Reply classifier Worker via HubSpot inbox webhook"
+     "text": "Reply classifier in hubspot-sync off a developer-app webhook (contact.propertyChange on hs_sales_email_last_replied; the inbox webhook only covers the team inbox); rules first, Claude Haiku for the rest; writes mktforge_reply_class"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d19-2",
-     "text": "Interested → stop sequence, create deal, attach context, Slack"
+     "text": "Interested → deal + Note (reply, enrichment, what was sent) + Slack post; HubSpot already unenrols on reply"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d19-3",
-     "text": "Wrong person → templated ask approved from Slack"
+     "text": "Wrong person → Slack post with Approve and send / Skip; Approve replies from tyler@ via Microsoft Graph and logs the send on the contact"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d19-4",
-     "text": "Unsubscribe → suppress across every list"
+     "text": "Unsubscribe → communication-preferences unsubscribe-all; do-not-contact segment picks it up"
     },
     {
-     "done": false,
+     "done": true,
+     "id": "d19-5",
+     "text": "Done-when: 25 fake replies (5 per class) through the live Worker, 24/25 on first pass (the miss was the harness reading back too early); Approve-to-send proven with a logged email on the contact"
+    },
+    {
+     "done": true,
      "id": "d19-6",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -667,10 +672,10 @@ window.PLAN = {
    "goal": "Launch Monday: first batch scheduled ahead for 7:07 AM PT, the ramp enrolled the evening before each day, all 89 out by Thursday.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d20-0",
      "moved": "2026-11-01",
-     "text": "Sun: add the postal address line to the Sequence template and refine the three lifecycle emails (docs/emails) before Tuesday's batch"
+     "text": "Sun: postal address line on the template (docs/emails; paste into the Sequence email before Tuesday's batch) and the refine pass on the three lifecycle emails"
     },
     {
      "done": true,
@@ -679,10 +684,10 @@ window.PLAN = {
      "text": "Sat: bump added as step 2 (threaded reply, 3 business days); three non-sendable contacts removed from the segment (89); 11 from the 78-score band enrolled from tyler@ for Mon 7:07 AM PT, tokens checked"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d20-6",
      "moved": "2026-11-01",
-     "text": "Sun: scripts/hubspot/ strip script for the \"(YC W24)\" suffix on sourced company names (dry run first) before Tuesday's 20; the first 11 fixed by hand"
+     "text": "Sun: scripts/hubspot/strip-company-suffix.mjs run (dry run, then apply): 20 contacts stripped of the \"(YC W24)\"-style suffix, 72 already clean"
     },
     {
      "done": false,
@@ -720,14 +725,14 @@ window.PLAN = {
      "text": "Sat: Write-up 3 published on LinkedIn and Medium: the pipeline (Apollo/Clay/ICP gates), one template over 92 drafts with the draft-vs-sent comparison, the loop back to HubSpot, and the bet (89 sends, ~5% replies, one founder through)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d21-2",
-     "text": "Trade-offs note: Clay vs scripting, Sequences vs cold tool, review queue"
+     "text": "Trade-offs note: Oct 31 launch decisions, the Day 19 classifier (developer-app webhook after all, rules before model, approve-to-send), Clay vs scripting, lifecycle emails unwired on purpose"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d21-3",
-     "text": "Start the Firestore and PostHog export scripts"
+     "text": "Firestore, PostHog and HubSpot exporters (analytics/export in mktforge-workers, NDJSON for bq load); run tonight so Day 22 starts at the load"
     },
     {
      "done": true,
@@ -1134,7 +1139,7 @@ window.PLAN = {
    "group": "CRM & automation",
    "id": "slack",
    "name": "Slack webhooks",
-   "usedDay": null
+   "usedDay": 21
   },
   {
    "group": "Outbound & deliverability",
