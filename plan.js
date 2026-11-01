@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Oct 30, 11:00 AM",
+ "updated": "Oct 31, 6:55 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -664,24 +664,30 @@ window.PLAN = {
   {
    "date": "2026-11-02",
    "day": 20,
-   "goal": "Launch Monday: first 10 scheduled ahead for 7 AM PT, the ramp enrolled the evening before each day, all 89 out by Thursday.",
+   "goal": "Launch Monday: first batch scheduled ahead for 7:07 AM PT, the ramp enrolled the evening before each day, all 89 out by Thursday.",
    "tasks": [
     {
      "done": false,
      "id": "d20-0",
+     "moved": "2026-11-01",
+     "text": "Sun: add the postal address line to the Sequence template and refine the three lifecycle emails (docs/emails) before Tuesday's batch"
+    },
+    {
+     "done": true,
+     "id": "d20-1",
      "moved": "2026-10-31",
-     "text": "Sat AM: refine the outreach template (postal address line) and the three lifecycle emails before any real send (docs/emails)"
+     "text": "Sat: bump added as step 2 (threaded reply, 3 business days); three non-sendable contacts removed from the segment (89); 11 from the 78-score band enrolled from tyler@ for Mon 7:07 AM PT, tokens checked"
     },
     {
      "done": false,
-     "id": "d20-1",
-     "moved": "2026-10-31",
-     "text": "Sat: enroll Monday's top 10 by ICP score (skip the two 0s), scheduled for Mon 7:00 AM PT, 5 per mailbox"
+     "id": "d20-6",
+     "moved": "2026-11-01",
+     "text": "Sun: scripts/hubspot/ strip script for the \"(YC W24)\" suffix on sourced company names (dry run first) before Tuesday's 20; the first 11 fixed by hand"
     },
     {
      "done": false,
      "id": "d20-2",
-     "text": "Mon after the CEO call: check bounces, complaints and placement on the first 10; pause if anything is off"
+     "text": "Mon after the CEO call: check bounces, complaints and placement on the first 11; pause if anything is off"
     },
     {
      "done": false,
@@ -705,12 +711,13 @@ window.PLAN = {
   {
    "date": "2026-11-01",
    "day": 21,
-   "goal": "Publish “An outbound loop built on my own product”.",
+   "goal": "Publish “If You Won't Use the Tool You Built, Why Should I?”",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d21-1",
-     "text": "Write-up: play, sourcing, one template over 92 drafts, deliverability"
+     "moved": "2026-10-31",
+     "text": "Sat: Write-up 3 published on LinkedIn and Medium: the pipeline (Apollo/Clay/ICP gates), one template over 92 drafts with the draft-vs-sent comparison, the loop back to HubSpot, and the bet (89 sends, ~5% replies, one founder through)"
     },
     {
      "done": false,
@@ -723,8 +730,9 @@ window.PLAN = {
      "text": "Start the Firestore and PostHog export scripts"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d21-4",
+     "moved": "2026-10-31",
      "text": "Update the dashboard (plan.js → push)"
     }
    ],
