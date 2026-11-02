@@ -216,6 +216,10 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
 
   const byDate = () => Object.fromEntries(days.map(d => [d.date, d]));
   const effDate = (t, d) => t.moved || d.date;
+  // A date is judged by the tasks that land on it: its own tasks that were not pushed elsewhere,
+  // plus tasks from other days moved onto it. So a day goes green once its remaining work is done,
+  // and a moved task is counted (and shown) under the day it moved to.
+  const landing = (date) => days.flatMap(d => d.tasks.filter(t => effDate(t, d) === date).map(t => [t, d]));
   // A date with no day of its own can still hold tasks moved onto it (a day split across two dates).
   const movedOnto = (date) => days.flatMap(d => d.tasks.filter(t => t.moved === date && d.date !== date).map(t => [t, d]));
 
@@ -227,7 +231,7 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
     $("barfill").style.width = pct + "%";
     const dayIdx = Math.max(0, Math.min(29, Math.round((parse(TODAY) - parse(START)) / 86400000)));
     $("barmark").style.left = "calc(" + ((dayIdx + 1) / 30 * 100) + "% - 1px)";
-    const fullDays = days.filter(d => d.tasks.length && d.tasks.every(t => t.done)).length;
+    let fullDays = 0; for (let i = 0; i < 30; i++) { const l = landing(addDays(START, i)); if (l.length && l.every(([t]) => t.done)) fullDays++; }
     $("bar-left").textContent = all.length ? `${done.length} of ${all.length} tasks done` : "Loading the plan…";
     $("bar-right").textContent = all.length ? `Day ${dayIdx + 1} of 30 · ${Math.round((dayIdx + 1) / 30 * 100)}% of the calendar used` : "";
     const open = all.filter(t => !t.done && effDate(t, days.find(d => d.tasks.includes(t))) < TODAY).length;
@@ -263,8 +267,8 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
       const date = addDays(START, i), d = map[date], dt = parse(date);
       const b = document.createElement("button");
       b.type = "button"; b.className = "day"; b.setAttribute("role", "option"); b.dataset.date = date;
-      const spill = d ? [] : movedOnto(date);
-      const total = d ? d.tasks.length : spill.length, done = d ? d.tasks.filter(t => t.done).length : spill.filter(([t]) => t.done).length;
+      const land = landing(date), spill = d ? [] : land;
+      const total = land.length, done = land.filter(([t]) => t.done).length;
       const spillTitle = spill.length ? `${spill[0][1].title} (cont.)` : "";
       if (total && done === total) b.classList.add("done");
       if (date === TODAY) b.classList.add("today");
@@ -286,8 +290,8 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
     const id = `chk-${t.id}-${mode}`;
     let tags = "";
     if (mode === "today" && effDate(t, d) < TODAY) tags += `<span class="tag carry">carried · d${d.day}</span>`;
-    else if (mode !== "detail" && d.date !== effDate(t, d)) tags += `<span class="tag from">from d${d.day}</span>`;
-    if (mode === "detail" && t.moved && t.moved !== d.date) tags += `<span class="tag moved">→ ${fmt(t.moved, { month: "short", day: "numeric" })}</span>`;
+    else if (d.date !== effDate(t, d) && (mode !== "detail" || effDate(t, d) === selected)) tags += `<span class="tag from">from d${d.day}</span>`;
+    if (mode === "detail" && t.moved && t.moved !== d.date && effDate(t, d) !== selected) tags += `<span class="tag moved">→ ${fmt(t.moved, { month: "short", day: "numeric" })}</span>`;
     let action = "";
     if (canWrite && !t.done && mode === "today") action = `<button class="act" data-act="push" data-task="${t.id}">Push →</button>`;
     if (canWrite && !t.done && mode === "tmrw" && t.moved === TOMORROW) action = `<button class="act" data-act="pull" data-task="${t.id}">← Pull back</button>`;
@@ -314,12 +318,12 @@ ul.tasks li.is-done .txt { color: var(--muted); text-decoration: line-through; t
       fill($("detail-tasks"), spill, "tmrw", "No tasks listed.");
       return;
     }
-    const done = d.tasks.filter(t => t.done).length;
+    const land = landing(selected), done = land.filter(([t]) => t.done).length;
     $("detail-eyebrow").textContent = `Day ${d.day} · ${fmt(d.date, { weekday: "long", month: "long", day: "numeric" })}`;
     $("detail-title").textContent = d.title;
     $("detail-goal").textContent = d.goal || "";
-    $("detail-count").innerHTML = `<b>${done}</b>/${d.tasks.length} done`;
-    fill($("detail-tasks"), d.tasks.map(t => [t, d]), "detail", "No tasks listed.");
+    $("detail-count").innerHTML = `<b>${done}</b>/${land.length} done`;
+    fill($("detail-tasks"), land, "detail", "No tasks listed.");
   }
 
   function renderAgenda() {

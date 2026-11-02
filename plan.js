@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 2, 2:55 PM",
+ "updated": "Nov 2, 3:25 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -690,22 +690,24 @@ window.PLAN = {
      "text": "Sun: scripts/hubspot/strip-company-suffix.mjs run (dry run, then apply): 20 contacts stripped of the \"(YC W24)\"-style suffix, 72 already clean"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d20-2",
      "text": "Mon after the CEO call: check bounces, complaints and placement on the first 11; pause if anything is off"
     },
     {
      "done": false,
      "id": "d20-3",
-     "text": "Tue 20 / Wed 30 / Thu 32: enroll each batch the evening before, gated on the previous day's bounces under 2% and zero complaints"
+     "moved": "2026-11-05",
+     "text": "Tue 20 / Wed 27 / Thu 31: enroll each batch the evening before, gated on the previous day's bounces under 2% and zero complaints (tick once Thursday's batch is out)"
     },
     {
      "done": false,
      "id": "d20-4",
+     "moved": "2026-11-03",
      "text": "HubSpot dashboard for the play; weekly Heatwave recheck"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d20-5",
      "text": "Update the dashboard (plan.js → push)"
     }
