@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 1, 12:05 PM",
+ "updated": "Nov 2, 2:55 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -750,32 +750,34 @@ window.PLAN = {
    "goal": "Firestore, PostHog and HubSpot land in BigQuery on a schedule.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d22-1",
      "text": "Create the BigQuery project and raw datasets"
     },
     {
      "done": false,
      "id": "d22-2",
-     "text": "Firestore nightly export + load"
+     "moved": "2026-11-04",
+     "text": "Firestore nightly export + load (scheduled with dbt on GitHub Actions; hand-run until then)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d22-3",
      "text": "PostHog BigQuery batch export"
     },
     {
      "done": false,
      "id": "d22-4",
-     "text": "HubSpot Worker cron into raw_hubspot"
+     "moved": "2026-11-04",
+     "text": "HubSpot export + load into raw_hubspot (scheduled with dbt on GitHub Actions, not a Worker cron)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d22-5",
      "text": "Campaign check: replies, bounces, domain health"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d22-6",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1181,7 +1183,7 @@ window.PLAN = {
    "group": "Data layer",
    "id": "bigquery",
    "name": "BigQuery",
-   "usedDay": null
+   "usedDay": 22
   },
   {
    "group": "Data layer",
