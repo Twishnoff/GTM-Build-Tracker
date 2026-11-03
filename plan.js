@@ -1203,7 +1203,7 @@ window.PLAN = {
    "group": "Data layer",
    "id": "sql",
    "name": "SQL",
-   "usedDay": null
+   "usedDay": 23
   },
   {
    "group": "Data layer",
