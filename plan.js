@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 2, 3:25 PM",
+ "updated": "Nov 3, 11:00 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -698,13 +698,19 @@ window.PLAN = {
      "done": false,
      "id": "d20-3",
      "moved": "2026-11-05",
-     "text": "Tue 20 / Wed 27 / Thu 31: enroll each batch the evening before, gated on the previous day's bounces under 2% and zero complaints (tick once Thursday's batch is out)"
+     "text": "Tue 20 / Wed 27 / Thu 31: enroll each batch the evening before, gated on the previous day's bounces under 2% and zero complaints (tick once Thursday's batch is out). Tue: batch 2 out, 1 hard bounce on a dead address, 0 complaints; Wed's 27 enrolled Nov 3 10:35 for 7:07"
+    },
+    {
+     "done": true,
+     "id": "d20-7",
+     "moved": "2026-11-03",
+     "text": "Weekly Heatwave recheck: getmktforge.com not listed (Nov 3, 18:30 UTC)"
     },
     {
      "done": false,
      "id": "d20-4",
-     "moved": "2026-11-03",
-     "text": "HubSpot dashboard for the play; weekly Heatwave recheck"
+     "moved": "2026-11-05",
+     "text": "Dashboard for the play: Looker on the warehouse rather than HubSpot (decided Nov 3: outlives the Pro trial, and what reads from the CRM should not be married to it)"
     },
     {
      "done": true,
@@ -793,37 +799,43 @@ window.PLAN = {
    "goal": "Answer the five questions in raw SQL before any modeling tool.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d23-1",
-     "text": "Activation rate by plan and source"
+     "text": "Q1 reconcile: do Firestore, PostHog and HubSpot agree per user (runs 3/3 yes; pdfs_saved counts saves by design; modules_run drifted on 2 contacts: seed ticked the Worker name as a module)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d23-2",
-     "text": "Median time verification → first run → first PDF"
+     "text": "Q2 first session: order of signup → company → key → first run, hours to first run (company-first holds, n=3; three accounts never ran a module)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d23-3",
-     "text": "Module retention week 1 → 2 → 3"
+     "text": "Q3 run duration and failures by module (find-my-customer p50 115 s, 5 abandoned; streaming Workers record time-to-first-byte, reportRun bug)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d23-4",
-     "text": "Enrichment lift: ICP ≥ 70 vs below"
+     "text": "Q4 ladder adherence (67%, but it is me testing, not a barometer)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d23-5",
-     "text": "Campaign reply and interested rate by band and step"
+     "text": "Q5 email → in-app action within 7 days (join works, empty until the first lifecycle send); plus events vs events_batch cross-check (match outside the 30-day window)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d23-6",
-     "text": "Keep every query in analytics/sql/ with a one-line interpretation"
+     "text": "Keep every query in analytics/sql/ with a one-line interpretation (Workers PR #26, run-all.ps1)"
     },
     {
      "done": false,
+     "id": "d23-8",
+     "moved": "2026-11-05",
+     "text": "The plan's original five (activation by plan and source; verification → first run → first PDF medians; week 1 → 2 → 3 retention; enrichment lift ICP ≥ 70; reply rate by band and step) wait for outside users and replies: run them with the Looker work"
+    },
+    {
+     "done": true,
      "id": "d23-7",
      "text": "Update the dashboard (plan.js → push)"
     }
