@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 3, 11:00 AM",
+ "updated": "Nov 4, 11:50 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -763,7 +763,7 @@ window.PLAN = {
      "text": "Create the BigQuery project and raw datasets"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d22-2",
      "moved": "2026-11-04",
      "text": "Firestore nightly export + load (scheduled with dbt on GitHub Actions; hand-run until then)"
@@ -774,7 +774,7 @@ window.PLAN = {
      "text": "PostHog BigQuery batch export"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d22-4",
      "moved": "2026-11-04",
      "text": "HubSpot export + load into raw_hubspot (scheduled with dbt on GitHub Actions, not a Worker cron)"
@@ -849,27 +849,47 @@ window.PLAN = {
    "goal": "The raw tables become a small, documented model layer.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
+     "id": "d24-6",
+     "text": "Thursday's 31 (92+) enrolled from tyler@ for Thu 7:07 AM PT; whole segment (89) now scheduled. Wednesday's line clean: 1 bounce total, 0 unsubscribes"
+    },
+    {
+     "done": true,
+     "id": "d24-7",
+     "text": "Seed fix: seed-from-posthog resolves each run's (module, worker) pair once, like the live path; CONTACT_PROPS now reads modules_run back; --recompute-modules repaired the two contacts (Workers PR #27)"
+    },
+    {
+     "done": true,
+     "id": "d24-8",
+     "text": "reportRun fires when the body closes, not the headers: streaming Workers record real durations; a client disconnect mid-stream lands as error / client_aborted and is not counted (PR #27, all ten Workers redeployed)"
+    },
+    {
+     "done": true,
      "id": "d24-1",
-     "text": "dbt Core project: staging + dim/fct models"
+     "text": "dbt Core project: 12 staging views + dim_users, dim_companies, fct_module_runs, fct_funnel_daily, fct_outreach, fct_outreach_emails (Workers PR #28)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d24-2",
-     "text": "Tests: unique uid, not-null email, accepted values"
+     "text": "Tests: unique / not-null keys, plan, module, outcome, ICP band (38 tests, dbt build 56/56)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d24-3",
-     "text": "Generate dbt docs; commit the lineage screenshot"
+     "text": "dbt docs generated; lineage graph committed at analytics/dbt/docs/lineage.png"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d24-4",
-     "text": "Run on a GitHub Actions schedule after the loads"
+     "text": "warehouse.yml on GitHub Actions: daily 10:00 UTC exports → bq load → dbt build; first run green in 3m58s. Queries 01–05 now read from the models (326 → 198 lines)"
     },
     {
-     "done": false,
+     "done": true,
+     "id": "d24-9",
+     "text": "Trade-offs: Day 23 (seed ticks, streaming duration, Looker over HubSpot) and Day 24 (dbt over plain SQL, one service account for Actions) in Mktforge-Website"
+    },
+    {
+     "done": true,
      "id": "d24-5",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1209,7 +1229,7 @@ window.PLAN = {
    "group": "Data layer",
    "id": "dbt",
    "name": "dbt Core",
-   "usedDay": null
+   "usedDay": 24
   },
   {
    "group": "Data layer",
