@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 4, 11:50 AM",
+ "updated": "Nov 4, 1:00 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -890,6 +890,11 @@ window.PLAN = {
     },
     {
      "done": true,
+     "id": "d24-10",
+     "text": "Day 19 debt closed: Exchange application access policy scopes the Graph app to tyler@ (Test-ApplicationAccessPolicy Denied for tyler.wishnoff@, Granted for tyler@)"
+    },
+    {
+     "done": true,
      "id": "d24-5",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1006,6 +1011,11 @@ window.PLAN = {
     },
     {
      "done": false,
+     "id": "d28-5",
+     "text": "Before the trials end (Clay ~Nov 9, Apollo Nov 10): export the Prospects 1–3 and Signups tables and the Apollo account list to CSV, screenshot the Clay column chain and Apollo filters, copy the three Clay function definitions into the repo; decide pay-or-lapse on Clay"
+    },
+    {
+     "done": false,
      "id": "d28-4",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1081,6 +1091,11 @@ window.PLAN = {
      "done": false,
      "id": "d30-4",
      "text": "Book two coffee chats with people holding the title"
+    },
+    {
+     "done": false,
+     "id": "d30-6",
+     "text": "Before Sales Hub Pro ends Nov 13 (do Nov 12 for final numbers): screenshot the Sequence Performance and Step performance tabs and export the enrollments list; sends and replies survive in the warehouse (fct_outreach), HubSpot's open counts and per-step view do not"
     },
     {
      "done": false,
