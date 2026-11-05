@@ -695,10 +695,10 @@ window.PLAN = {
      "text": "Mon after the CEO call: check bounces, complaints and placement on the first 11; pause if anything is off"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d20-3",
      "moved": "2026-11-05",
-     "text": "Tue 20 / Wed 27 / Thu 31: enroll each batch the evening before, gated on the previous day's bounces under 2% and zero complaints (tick once Thursday's batch is out). Tue: batch 2 out, 1 hard bounce on a dead address, 0 complaints; Wed's 27 enrolled Nov 3 10:35 for 7:07"
+     "text": "Tue 20 / Wed 27 / Thu 31: enroll each batch the evening before, gated on the previous day's bounces under 2% and zero complaints. All 89 out by Thu Nov 5 7:17 AM PT; 1 hard bounce total, 0 complaints, 1 unsubscribe (link click, suppressed)"
     },
     {
      "done": true,
@@ -707,10 +707,10 @@ window.PLAN = {
      "text": "Weekly Heatwave recheck: getmktforge.com not listed (Nov 3, 18:30 UTC)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d20-4",
      "moved": "2026-11-05",
-     "text": "Dashboard for the play: Looker on the warehouse rather than HubSpot (decided Nov 3: outlives the Pro trial, and what reads from the CRM should not be married to it)"
+     "text": "Dashboard for the play: Looker Studio \"Mktforge GTM\" on dbt_marts (campaign page: scorecards, results by ICP band, step split, sends by day)"
     },
     {
      "done": true,
@@ -829,10 +829,10 @@ window.PLAN = {
      "text": "Keep every query in analytics/sql/ with a one-line interpretation (Workers PR #26, run-all.ps1)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d23-8",
      "moved": "2026-11-05",
-     "text": "The plan's original five (activation by plan and source; verification → first run → first PDF medians; week 1 → 2 → 3 retention; enrichment lift ICP ≥ 70; reply rate by band and step) wait for outside users and replies: run them with the Looker work"
+     "text": "The plan's original five built as queries 06–10 on the marts with \"empty until\" lines (four return internal rows only); fct_retention_weekly mart added for the retention question (Workers PR #30)"
     },
     {
      "done": true,
@@ -908,19 +908,25 @@ window.PLAN = {
    "goal": "A single dashboard on the warehouse, and a verdict on the campaign.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d25-1",
-     "text": "Looker Studio on the dbt models"
+     "text": "Looker Studio on the dbt models: two pages, campaign + funnel (activation funnel, activation by signup week, retention by weeks since signup); warehouse workflow re-run by hand because the 10:00 UTC schedule did not fire on its first morning"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d25-2",
-     "text": "Campaign readout: final numbers, cost per interested reply, expand/stop"
+     "text": "Campaign readout written (docs/readouts/founders-trial-2026-10.md): 89 sent, 25 opens (28%), 0 replies, 1 bounce, 1 unsubscribe; $105 cash, ~24 h; expand the system, stop funded founders, test job seekers. Interim until the Nov 6 bump"
+    },
+    {
+     "done": true,
+     "id": "d25-3",
+     "text": "Book interested replies into calls: none to book (0 replies through Nov 5)"
     },
     {
      "done": false,
-     "id": "d25-3",
-     "text": "Book interested replies into calls"
+     "id": "d25-5",
+     "moved": "2026-11-06",
+     "text": "Stamp the readout final after the first bump (Monday's 11) goes out Nov 6; check the warehouse schedule fired at 10:00 UTC"
     },
     {
      "done": false,
@@ -1250,7 +1256,7 @@ window.PLAN = {
    "group": "Data layer",
    "id": "looker",
    "name": "Looker Studio",
-   "usedDay": null
+   "usedDay": 25
   }
  ]
 };
