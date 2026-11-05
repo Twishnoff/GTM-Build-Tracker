@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 4, 1:00 PM",
+ "updated": "Nov 5, 12:15 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -929,7 +929,7 @@ window.PLAN = {
      "text": "Stamp the readout final after the first bump (Monday's 11) goes out Nov 6; check the warehouse schedule fired at 10:00 UTC"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d25-4",
      "text": "Update the dashboard (plan.js → push)"
     }
