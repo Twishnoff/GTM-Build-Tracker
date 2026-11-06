@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 5, 12:15 PM",
+ "updated": "Nov 6, 3:12 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -923,10 +923,10 @@ window.PLAN = {
      "text": "Book interested replies into calls: none to book (0 replies through Nov 5)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d25-5",
      "moved": "2026-11-06",
-     "text": "Stamp the readout final after the first bump (Monday's 11) goes out Nov 6; check the warehouse schedule fired at 10:00 UTC"
+     "text": "Readout stamped final Nov 6 after the first bump (11 sent, 4 opens, 0 replies; step 1 at 31 opens, 34.8%); warehouse schedule fired seven hours late, moved to 10:17 UTC"
     },
     {
      "done": true,
@@ -940,25 +940,25 @@ window.PLAN = {
   {
    "date": "2026-11-06",
    "day": 26,
-   "goal": "Publish “A GTM data layer for a one-person product”.",
+   "goal": "Publish “A GTM Data Layer for a Team of One” (retitled from “one-person product”).",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d26-1",
-     "text": "Write-up: why a warehouse, the model layer, three findings"
+     "text": "Write-up 4 published on LinkedIn and Medium: why a warehouse at this size, dbt as the layer that defines and tests the numbers, three findings from the SQL (seed bug, run duration at first byte, ICP bands open 48/21/18/50% with 0 replies); lineage graph regenerated, Looker 200% retention row fixed first"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d26-2",
-     "text": "One-page architecture diagram of the full stack"
+     "text": "Architecture diagram of the full stack (docs/covers/mktforge-gtm-stack.png): left-to-right spine, sourcing and Zapier above, warehouse below, three write-backs in peach; live on LinkedIn as the “Mktforge GTM Engineering Stack” project; portfolio page with Day 27"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d26-3",
-     "text": "Trade-offs note: BigQuery vs Postgres, dbt vs SQL, Looker vs module"
+     "text": "Trade-offs: BigQuery vs Postgres, cron moved to 10:17 UTC after a seven-hour delay (Workers PR #31), Looker summed a pre-divided rate (dbt vs SQL and Looker vs module were already logged Nov 4–5)"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d26-4",
      "text": "Update the dashboard (plan.js → push)"
     }
