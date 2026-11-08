@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 6, 3:12 PM",
+ "updated": "Nov 7, 4:58 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -972,22 +972,27 @@ window.PLAN = {
    "goal": "One Mktforge GTM Engineering case study on the portfolio.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d27-1",
-     "text": "New portfolio page: problem, systems, diagram, numbers, trade-offs"
+     "text": "Case study page live at twishnoff.github.io/Portfolio/GTM-Engineering: “A Complete GTM Engine, Built Solo in 30 Days”; problem (capabilities, not revenue), five systems with proof lines, stack diagram + ICP formula + dbt lineage, campaign table and verdict, 14 trade-offs in four themes (cost, portability, low overhead, scoring), eight links (Portfolio commit 508fc1f)"
     },
     {
-     "done": false,
-     "id": "d27-2",
-     "text": "5-minute narrated screen recording of the loop"
-    },
-    {
-     "done": false,
+     "done": true,
      "id": "d27-3",
-     "text": "“Marketing Engineering” card on the portfolio index"
+     "text": "Homepage: fourth hero tile “5 GTM systems” beside the Mktforge tile (stack diagram thumbnail, navy GTM Engineering stamp), GTM Engineering in the nav dropdown on all five pages, sitemap entry; the plan’s 5-minute video cut per the cut list"
     },
     {
-     "done": false,
+     "done": true,
+     "id": "d27-5",
+     "text": "Mktforge README lead-path flowchart redrawn from the stack diagram, reply triage as its own box, HubSpot-workflows and nudge nodes removed; edited and rendered in mermaid.ai myself (Mktforge PR #12)"
+    },
+    {
+     "done": true,
+     "id": "d27-6",
+     "text": "Warehouse cron fired at 16:28 UTC, six hours after 10:17, so the Day 26 rule kicked in: Zap “Warehouse dispatch 10:15 UTC” (Schedule → Webhooks POST to the dispatches endpoint, fine-grained token on mktforge-workers, Actions read/write, expires Feb 5 2027) fires workflow_dispatch; test run #11 started in seconds; cron kept as fallback; two trade-offs lines and the flowchart SVG in docs/covers (Website PR #28)"
+    },
+    {
+     "done": true,
      "id": "d27-4",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1154,7 +1159,7 @@ window.PLAN = {
    "group": "Build & deploy",
    "id": "mermaid",
    "name": "Mermaid diagrams",
-   "usedDay": null
+   "usedDay": 27
   },
   {
    "group": "Build & deploy",
