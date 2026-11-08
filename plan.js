@@ -1006,27 +1006,27 @@ window.PLAN = {
    "goal": "Your materials say GTM Engineer and the proof is one click away.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d28-6",
      "text": "Bump sends missing from fct_outreach_emails (dashboard shows first_touch only; Nov 6 bump sent 11, opened 4): check the HubSpot export and the kind logic before Monday's bumps"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d28-1",
      "text": "Resume: GTM Engineering project block with numbers; skills line"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d28-2",
      "text": "LinkedIn: headline, about, Mktforge entry; case study pinned"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d28-5",
      "text": "Before the trials end (Clay ~Nov 9, Apollo Nov 10): export the Prospects 1–3 and Signups tables and the Apollo account list to CSV, screenshot the Clay column chain and Apollo filters, copy the three Clay function definitions into the repo; decide pay-or-lapse on Clay"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d28-4",
      "text": "Update the dashboard (plan.js → push)"
     }
