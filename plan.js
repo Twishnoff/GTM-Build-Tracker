@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 7, 4:58 PM",
+ "updated": "Nov 7, 8:47 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -1007,6 +1007,11 @@ window.PLAN = {
    "tasks": [
     {
      "done": false,
+     "id": "d28-6",
+     "text": "Bump sends missing from fct_outreach_emails (dashboard shows first_touch only; Nov 6 bump sent 11, opened 4): check the HubSpot export and the kind logic before Monday's bumps"
+    },
+    {
+     "done": false,
      "id": "d28-1",
      "text": "Resume: GTM Engineering project block with numbers; skills line"
     },
@@ -1014,11 +1019,6 @@ window.PLAN = {
      "done": false,
      "id": "d28-2",
      "text": "LinkedIn: headline, about, Mktforge entry; case study pinned"
-    },
-    {
-     "done": false,
-     "id": "d28-3",
-     "text": "Ask two former colleagues for a recommendation"
     },
     {
      "done": false,
@@ -1097,11 +1097,6 @@ window.PLAN = {
      "done": false,
      "id": "d30-3",
      "text": "Ten more GTM/Growth Engineer roles with the same materials"
-    },
-    {
-     "done": false,
-     "id": "d30-4",
-     "text": "Book two coffee chats with people holding the title"
     },
     {
      "done": false,
