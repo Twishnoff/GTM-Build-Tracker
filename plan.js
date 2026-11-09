@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 7, 8:47 PM",
+ "updated": "Nov 9, 2:45 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -1013,12 +1013,12 @@ window.PLAN = {
     {
      "done": true,
      "id": "d28-1",
-     "text": "Resume: GTM Engineering project block with numbers; skills line"
+     "text": "Resume: GTM Engineering project block with numbers; skills line updated with the stack"
     },
     {
      "done": true,
      "id": "d28-2",
-     "text": "LinkedIn: headline, about, Mktforge entry; case study pinned"
+     "text": "LinkedIn: headline, about, Mktforge entry; case study pinned as featured"
     },
     {
      "done": true,
@@ -1040,37 +1040,43 @@ window.PLAN = {
    "goal": "Five answers under two minutes each, with numbers.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d29-1",
      "text": "Pipeline program built from the ground up"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d29-2",
      "text": "A trade-off behind something built, bought or simplified"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d29-3",
      "text": "Quality and error handling in an AI workflow"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d29-4",
      "text": "What you would expand and what you would stop"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d29-5",
      "text": "What you need from AEs and BDRs before launch"
     },
     {
      "done": false,
      "id": "d29-6",
-     "text": "Run each answer out loud; cut anything over two minutes"
+     "moved": "2026-11-10",
+     "text": "Run each answer out loud with the cards in hand; cut anything over two minutes"
     },
     {
-     "done": false,
+     "done": true,
+     "id": "d29-8",
+     "text": "Slack-on-result step for the warehouse run (carried since Day 25)"
+    },
+    {
+     "done": true,
      "id": "d29-7",
      "text": "Update the dashboard (plan.js → push)"
     }
@@ -1081,22 +1087,17 @@ window.PLAN = {
   {
    "date": "2026-11-10",
    "day": 30,
-   "goal": "The Edra application is in; ten more roles targeted.",
+   "goal": "Ten applications out with the current materials, as a readiness test.",
    "tasks": [
     {
      "done": false,
-     "id": "d30-1",
-     "text": "Edra: tailored resume, four-sentence note, apply; message the hiring manager"
-    },
-    {
-     "done": false,
-     "id": "d30-2",
-     "text": "Confirm the on-site question before applying"
-    },
-    {
-     "done": false,
      "id": "d30-3",
-     "text": "Ten more GTM/Growth Engineer roles with the same materials"
+     "text": "Ten GTM/Growth Engineer roles at seed to Series B B2B SaaS and AI companies, applied with the same materials"
+    },
+    {
+     "done": false,
+     "id": "d30-4",
+     "text": "Write the readiness test down: the assumption (no interest), what counts as interest, when to check"
     },
     {
      "done": false,
