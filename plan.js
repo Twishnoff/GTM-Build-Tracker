@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 9, 6:30 PM",
+ "updated": "Nov 10, 10:00 AM",
  "days": [
   {
    "date": "2026-10-12",
@@ -1065,7 +1065,7 @@ window.PLAN = {
      "text": "What you need from AEs and BDRs before launch"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d29-6",
      "moved": "2026-11-10",
      "text": "Run each answer out loud with the cards in hand; cut anything over two minutes"
@@ -1100,12 +1100,12 @@ window.PLAN = {
      "text": "Write the readiness test down: the assumption (no interest), what counts as interest, when to check"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d30-6",
      "text": "Before Sales Hub Pro ends Nov 13 (do Nov 12 for final numbers): screenshot the Sequence Performance and Step performance tabs and export the enrollments list; sends and replies survive in the warehouse (fct_outreach), HubSpot's open counts and per-step view do not"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d30-5",
      "text": "Update the dashboard (plan.js → push)"
     }
