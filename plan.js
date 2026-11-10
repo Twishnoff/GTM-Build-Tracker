@@ -1,6 +1,6 @@
 // Generated from the live tracker. Do not edit by hand.
 window.PLAN = {
- "updated": "Nov 9, 2:45 PM",
+ "updated": "Nov 9, 6:30 PM",
  "days": [
   {
    "date": "2026-10-12",
@@ -1090,12 +1090,12 @@ window.PLAN = {
    "goal": "Ten applications out with the current materials, as a readiness test.",
    "tasks": [
     {
-     "done": false,
+     "done": true,
      "id": "d30-3",
      "text": "Ten GTM/Growth Engineer roles at seed to Series B B2B SaaS and AI companies, applied with the same materials"
     },
     {
-     "done": false,
+     "done": true,
      "id": "d30-4",
      "text": "Write the readiness test down: the assumption (no interest), what counts as interest, when to check"
     },
